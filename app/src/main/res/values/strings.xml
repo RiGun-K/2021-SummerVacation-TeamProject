@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">TeamProjectt</string>
+    <string name="app_name">환영합니다</string>
     <string name="title_activity_main2">MainActivity</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_home">메인화면</string>
+    <string name="title_dashboard">프로젝트 생성</string>
+    <string name="title_notifications">마이페이지 및 설정</string>
 </resources>
