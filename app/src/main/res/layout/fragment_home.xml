@@ -41,11 +41,15 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/logo" />
 
-            <TextView
-                android:id="@+id/text"
+            <Button
+                android:id="@+id/Button"
                 android:layout_width="243dp"
                 android:layout_height="match_parent"
                 android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                app:backgroundTint="#6799FF"
                 android:text=" 진행중인 프로젝트 " />
 
         </LinearLayout>
@@ -74,11 +78,15 @@
                     android:layout_height="wrap_content"
                     android:src="@drawable/logo" />
 
-                <TextView
-                    android:id="@+id/text2"
+                <Button
+                    android:id="@+id/Button2"
                     android:layout_width="248dp"
                     android:layout_height="match_parent"
                     android:gravity="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    app:backgroundTint="#6799FF"
                     android:text=" 완료된 프로젝트 " />
 
             </LinearLayout>

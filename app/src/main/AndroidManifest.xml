@@ -16,9 +16,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TeamProjectt">
+        android:usesCleartextTraffic="true">
         <activity
             android:name=".MainActivity"
-            android:label="@string/title_activity_main2"></activity>
+            android:label="@string/title_activity_main2"
+            ></activity>
+
         <activity android:name=".Splashscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,6 +31,12 @@
         </activity>
         <activity android:name=".LoginActivity" />
         <activity android:name=".RegisterActivity" />
+        <activity android:name=".IngProject" />
+        <activity android:name=".CompletedProject" />
+
+
+
+
     </application>
 
 </manifest>

@@ -7,6 +7,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="성공"
-        android:id="@+id/ing1" />
+        android:id="@+id/ing2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
