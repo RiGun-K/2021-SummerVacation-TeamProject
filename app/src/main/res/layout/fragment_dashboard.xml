@@ -22,7 +22,7 @@
 
 
     <Button
-        android:id="@+id/validateButton"
+        android:id="@+id/validateButton2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="중복 체크"
@@ -75,7 +75,7 @@
         app:layout_constraintTop_toBottomOf="@+id/et_name" />
 
     <Button
-        android:id="@+id/btn_register"
+        android:id="@+id/btn_register2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"

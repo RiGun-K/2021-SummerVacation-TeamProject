@@ -42,7 +42,7 @@
                 android:src="@drawable/logo" />
 
             <TextView
-                android:id="@+id/text2"
+                android:id="@+id/text"
                 android:layout_width="243dp"
                 android:layout_height="match_parent"
                 android:gravity="center"
@@ -75,7 +75,7 @@
                     android:src="@drawable/logo" />
 
                 <TextView
-                    android:id="@+id/text"
+                    android:id="@+id/text2"
                     android:layout_width="248dp"
                     android:layout_height="match_parent"
                     android:gravity="center"
