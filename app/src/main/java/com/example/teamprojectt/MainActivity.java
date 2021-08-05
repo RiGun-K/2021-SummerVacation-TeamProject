@@ -1,5 +1,6 @@
 package com.example.teamprojectt;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -38,49 +39,43 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_home);
 
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
-
-        BottomNavigationView navView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications)
-                .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main2);
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-        NavigationUI.setupWithNavController(binding.navView, navController);
 
 
 
+        Button = findViewById(R.id.Button);
+        Button2 = findViewById(R.id.Button2);
 
-//        Button = findViewById(R.id.Button);
-//        Button2 = findViewById(R.id.Button2);
-//
-//
-//
-//        Button.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(MainActivity.this, IngProject.class);
-//                startActivity(intent);
-//
-//
-//            }
-//        });
-//
-//        Button2.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(MainActivity.this, CompletedProject.class);
-//                startActivity(intent);
-//
-//
-//            }
-//        });
+
+
+        Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, IngProject.class);
+                startActivity(intent);
+
+
+            }
+        });
+
+
+
+
+
+
+        Button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, CompletedProject.class);
+                startActivity(intent);
+
+
+            }
+        });
 
 
     }
+
+
 
 
     private long lastTimeBackPressed;
