@@ -30,7 +30,6 @@
         <activity android:name=".RegisterActivity" />
         <activity android:name=".IngProject" />
         <activity android:name=".CompletedProject" />
-        <activity android:name=".RealMainActivity" />
     </application>
 
 </manifest>

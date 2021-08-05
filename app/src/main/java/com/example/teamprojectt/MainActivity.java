@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     // 싹 다 갈아엎고 프레그먼트를 사용해서 화면전환을 하는수 밖에 없다.
     //
 
-    private ActivityMainBinding binding;
+
     private TextView text;
     private TextView text2;
     private Button Button, Button2;
@@ -37,44 +37,43 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_home);
+        setContentView(R.layout.activity_main);
 
 
-
-
-        Button = findViewById(R.id.Button);
-        Button2 = findViewById(R.id.Button2);
-
-
-
-        Button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, IngProject.class);
-                startActivity(intent);
-
-
-            }
-        });
-
-
-
-
-
-
-        Button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, CompletedProject.class);
-                startActivity(intent);
-
-
-            }
-        });
-
-
+//
+//
+//        Button = findViewById(R.id.Button);
+//        Button2 = findViewById(R.id.Button2);
+//
+//
+//
+//        Button.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(MainActivity.this, IngProject.class);
+//                startActivity(intent);
+//
+//
+//            }
+//        });
+//
+//
+//
+//
+//
+//
+//        Button2.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(MainActivity.this, CompletedProject.class);
+//                startActivity(intent);
+//
+//
+//            }
+//        });
+//
+//
     }
-
 
 
 
