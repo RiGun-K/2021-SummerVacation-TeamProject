@@ -17,15 +17,15 @@
         android:paddingLeft="10dp">
 
 
-            <TextView
-                android:id="@+id/title"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:text=" 환영합니다 ㅇㅇㅇ님 ! "
-                android:textColor="@color/logo"
-                android:textSize="15dp"
-                android:gravity="center"
-                />
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text=" 환영합니다 ㅇㅇㅇ님 ! "
+            android:textColor="@color/logo"
+            android:textSize="15dp"
+            android:gravity="center"
+            />
 
 
         <LinearLayout
@@ -96,7 +96,5 @@
 
         </LinearLayout>
     </LinearLayout>
-
-
 
 </LinearLayout>
