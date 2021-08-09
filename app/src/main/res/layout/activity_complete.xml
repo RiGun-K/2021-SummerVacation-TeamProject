@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".CompletedActivity">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="성공"
-        android:id="@+id/ing2" />
+        android:text="완료된 프로젝트 리스트 출력"
+        android:id="@+id/complete"
+        android:textSize="60sp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

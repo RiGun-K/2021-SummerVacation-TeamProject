@@ -5,7 +5,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class CompletedProject extends AppCompatActivity {
+public class CompletedActivity extends AppCompatActivity {
     private TextView ing2;
 
 

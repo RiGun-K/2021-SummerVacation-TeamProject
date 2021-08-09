@@ -1,7 +1,10 @@
 package com.example.teamprojectt;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,10 +26,16 @@ public class MainActivity extends AppCompatActivity {
     private NotificationsFragment NotificationsFragment;
 
 
+    private Button Button,Button2;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {    // 액티비티 시작시 처음으로 실행
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+
 
 
         // 객체들을 생성
