@@ -30,7 +30,7 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".HomeActivity" />
-        <activity android:name=".IngProject" />
+        <activity android:name=".CompletedActivity" />
     </application>
 
 </manifest>
