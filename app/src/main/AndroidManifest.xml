@@ -31,6 +31,7 @@
         <activity android:name=".RegisterActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".CompletedActivity" />
+        <activity android:name=".DashboardActivity" />
     </application>
 
 </manifest>
