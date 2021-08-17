@@ -34,6 +34,7 @@
         <activity android:name=".CompletedActivity" />
         <activity android:name=".DashboardActivity" />
         <activity android:name=".Dashboardfinal" />
+        <activity android:name=".NotificationsActivity" />
     </application>
 
 </manifest>

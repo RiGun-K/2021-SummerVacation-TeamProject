@@ -35,7 +35,7 @@ public class NotificationsFragment extends Fragment {
         btn_edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), DashboardActivity.class);
+                Intent intent = new Intent(getActivity(), NotificationsActivity.class);
                 startActivity(intent);
             }
         });
