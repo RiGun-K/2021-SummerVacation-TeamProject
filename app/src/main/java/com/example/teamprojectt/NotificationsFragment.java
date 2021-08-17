@@ -17,8 +17,8 @@ import org.jetbrains.annotations.NotNull;
 public class NotificationsFragment extends Fragment {
 
     private View view;
-    private Button btn_edit;
-    private EditText et_name3;
+    private Button btn_edit, mylist;
+
 
     // Ctrl + o
 
@@ -44,9 +44,9 @@ public class NotificationsFragment extends Fragment {
 
 
         // 프로젝트 리스트 생성 관련 버튼
-        et_name3 = view.findViewById(R.id.et_name3);
+        mylist = view.findViewById(R.id.mylist);
 
-        et_name3.setOnClickListener(new View.OnClickListener() {
+        mylist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), NotificationsActivity2.class);

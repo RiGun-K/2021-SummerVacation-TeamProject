@@ -36,30 +36,32 @@
         app:layout_constraintStart_toStartOf="@+id/et_id3"
         app:layout_constraintTop_toBottomOf="@+id/et_id3" />
 
-    <EditText
-        android:id="@+id/et_name3"
+    <Button
+        android:id="@+id/mylist"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="참여한 프로젝트"
-        android:inputType="textPersonName"
+        android:textColor="#ffffff"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:backgroundTint="#6799FF"
+        android:text="나의 프로젝트 리스트"
         app:layout_constraintEnd_toEndOf="@+id/et_pass3"
         app:layout_constraintStart_toStartOf="@+id/et_pass3"
         app:layout_constraintTop_toBottomOf="@+id/et_pass3" />
 
     <CheckBox
         android:id="@+id/checkBox"
-        android:text="남이 보게 할것인지 유무"
+        android:text="남이 보게 할건가?"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="전화번호"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/et_name3"
-        app:layout_constraintStart_toStartOf="@+id/et_name3"
-        app:layout_constraintTop_toBottomOf="@+id/et_name3"
+        app:layout_constraintEnd_toEndOf="@+id/mylist"
+        app:layout_constraintStart_toStartOf="@+id/mylist"
+        app:layout_constraintTop_toBottomOf="@+id/mylist"
         />
 
 
@@ -67,14 +69,13 @@
         android:id="@+id/btn_edit"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="116dp"
         android:text="수정 및 저장"
         app:backgroundTint="#6799FF"
         app:layout_constraintEnd_toEndOf="@+id/checkBox"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/checkBox"
         app:layout_constraintTop_toBottomOf="@+id/checkBox" />
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
