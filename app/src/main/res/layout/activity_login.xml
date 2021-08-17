@@ -14,7 +14,7 @@
         android:layout_height="270dp"
         android:layout_margin="20dp"
         android:foregroundGravity="center"
-        android:src="@drawable/set"
+        android:src="@drawable/starbuck"
         tools:ignore="MissingConstraints" />
 
 
