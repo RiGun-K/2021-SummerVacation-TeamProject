@@ -35,6 +35,7 @@
         <activity android:name=".DashboardActivity" />
         <activity android:name=".Dashboardfinal" />
         <activity android:name=".NotificationsActivity" />
+        <activity android:name=".NotificationsActivity2" />
     </application>
 
 </manifest>
