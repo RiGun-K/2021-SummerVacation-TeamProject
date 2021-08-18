@@ -6,9 +6,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
@@ -20,7 +23,8 @@ import org.json.JSONObject;
 
 public class RegisterActivity extends AppCompatActivity {
 
-        private EditText et_id, et_pass, et_name, et_hakbun;
+        TextView tv_error_email;
+        private EditText et_id, et_pass, et_name, et_hakbun, et_email;
         private Button btn_register,validateButton;
         private boolean validate = false;       // 사용할 수 있는 아이디 인지 체크
 
@@ -100,6 +104,30 @@ public class RegisterActivity extends AppCompatActivity {
 
 ////////////////////////////////////
 
+            et_email=findViewById(R.id.et_email);
+            tv_error_email=findViewById(R.id.tv_error_email);
+
+            et_email.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                }
+
+                @Override
+                public void onTextChanged(CharSequence s, int start, int before, int count) {
+                }
+
+                @Override
+                public void afterTextChanged(Editable s) {
+                    if(!android.util.Patterns.EMAIL_ADDRESS.matcher(s.toString()).matches()){
+                        tv_error_email.setText("이메일 형식으로 입력해주세요.");    // 경고 메세지
+                        et_email.setBackgroundResource(R.drawable.red_edittext);  // 적색 테두리 적용
+                    }
+                    else{
+                        tv_error_email.setText("");         //에러 메세지 제거
+                        et_email.setBackgroundResource(R.drawable.white_edittext);  //테투리 흰색으로 변경
+                    }
+                }// afterTextChanged()..
+            });
 
 
             // 회원가입 버튼 클릭시 수행
