@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private HomeFragment HomeFragment;
     private DashboardFragment DashboardFragment;
     private NotificationsFragment NotificationsFragment;
+    private SnsFragment SnsFragment;
 
 
     private Button Button,Button2;
@@ -55,6 +56,8 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.navigation_notifications:
                         setFrag(2);
                         break;
+                    case R.id.navigation_sns:
+                        setFrag(3);
                 }
                 return true;
             }
@@ -64,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
         HomeFragment = new HomeFragment();
         DashboardFragment = new DashboardFragment();
         NotificationsFragment = new NotificationsFragment();
+        SnsFragment =  new SnsFragment();
 
         // 처음 진입할시 (첫화면) 설정
         setFrag(0);   // case 0 번째에 해당하는 화면으로
@@ -87,6 +91,10 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case 2:
                 ft.replace(R.id.main_frame, NotificationsFragment);
+                ft.commit();
+                break;
+            case 3:
+                ft.replace(R.id.main_frame, SnsFragment);
                 ft.commit();
                 break;
         }

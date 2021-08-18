@@ -13,5 +13,11 @@
     <item
         android:id="@+id/navigation_notifications"
         android:icon="@drawable/ic_notifications_black_24dp"
-        android:title="@string/title_notifications" />
+        android:title="마이 페이지" />
+
+    <item
+        android:id="@+id/navigation_sns"
+        android:icon="@drawable/ic_baseline_sms_24dp"
+        android:title="회의록" />
+
 </menu>

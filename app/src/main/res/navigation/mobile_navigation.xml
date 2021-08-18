@@ -20,6 +20,14 @@
     <fragment
         android:id="@+id/navigation_notifications"
         android:name="com.example.teamprojectt.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
+        android:label="마이 페이지"
         tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/navigation_sns"
+        android:name="com.example.teamprojectt.ui.notifications.snsFragment"
+        android:label="회의록"
+        tools:layout="@layout/fragment_sns" />
+
+
 </navigation>
