@@ -1,95 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <LinearLayout
+
+    <TextView
+        android:id="@+id/title"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:paddingLeft="10dp"
-        android:paddingTop="10dp"
-        android:paddingRight="10dp"
-        android:paddingBottom="10dp">
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text=" 환영합니다 ㅇㅇㅇ님 ! "
+        android:textColor="@color/logo"
+        android:textSize="20dp" />
 
 
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:gravity="center"
-            android:text=" 환영합니다 ㅇㅇㅇ님 ! "
-            android:textColor="@color/logo"
-            android:textSize="20dp" />
+    <TextView
+        android:id="@+id/tv_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="TextView"
+        android:inputType="textPassword"
+        tools:layout_editor_absoluteX="123dp"
+        tools:layout_editor_absoluteY="99dp" />
+
+    <EditText
+        android:id="@+id/et_id3"
+        android:layout_width="210dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:hint="이름"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 
+    <EditText
+        android:id="@+id/et_pass3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="스펙설명"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@+id/et_id3"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/et_id3"
+        app:layout_constraintTop_toBottomOf="@+id/et_id3" />
 
-        <LinearLayout
-            android:layout_width="399dp"
-            android:layout_height="281dp"
-            android:layout_gravity="top"
+    <Button
+        android:id="@+id/mylist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textColor="#ffffff"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:backgroundTint="#6799FF"
+        android:text="나의 프로젝트 리스트"
+        app:layout_constraintEnd_toEndOf="@+id/et_pass3"
+        app:layout_constraintStart_toStartOf="@+id/et_pass3"
+        app:layout_constraintTop_toBottomOf="@+id/et_pass3" />
 
-            android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/icon2"
-                android:layout_width="80dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/splashimage" />
-
-            <Button
-                android:id="@+id/MainButton"
-                android:layout_width="240dp"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text=" 진행중인 프로젝트 "
-                android:textColor="#FFFFFF"
-                android:textSize="18dp"
-                android:textStyle="bold"
-                app:backgroundTint="#6799FF" />
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:text="남이 보게 할건가?"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="전화번호"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/mylist"
+        app:layout_constraintStart_toStartOf="@+id/mylist"
+        app:layout_constraintTop_toBottomOf="@+id/mylist"
+        />
 
 
-        </LinearLayout>
+    <Button
+        android:id="@+id/btn_edit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="116dp"
+        android:text="수정 및 저장"
+        app:backgroundTint="#6799FF"
+        app:layout_constraintEnd_toEndOf="@+id/checkBox"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/checkBox"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox" />
 
-        <LinearLayout
-            android:layout_width="399dp"
-            android:layout_height="281dp"
-            android:layout_gravity="top"
 
-            android:orientation="horizontal">
+</androidx.constraintlayout.widget.ConstraintLayout>
 
-            <LinearLayout
-                android:id="@+id/shapeLayout"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.5">
 
-                <ImageView
-                    android:id="@+id/icon"
-                    android:layout_width="80dp"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/diver" />
-
-                <Button
-                    android:id="@+id/MainButton2"
-                    android:layout_width="240dp"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:textColor="#FFFFFF"
-                    android:textSize="18dp"
-                    android:textStyle="bold"
-                    app:backgroundTint="#6799FF"
-                    android:text=" 완료된 프로젝트 " />
-
-            </LinearLayout>
-
-</LinearLayout>
-
-    </LinearLayout>
-
-</LinearLayout>

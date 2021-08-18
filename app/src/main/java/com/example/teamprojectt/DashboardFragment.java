@@ -16,7 +16,8 @@ import org.jetbrains.annotations.NotNull;
 public class DashboardFragment extends Fragment {
 
     private View view;
-    private Button DashboardButton;
+    private Button MainButton, MainButton2;
+
 
     // Ctrl + o
 
@@ -28,13 +29,23 @@ public class DashboardFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_dashboard,container,false);
         // Dashboard layout 과 연결
 
-        DashboardButton = view.findViewById(R.id.DashboardButton);
+        MainButton = view.findViewById(R.id.MainButton);
+        MainButton2 = view.findViewById(R.id.MainButton2);;
         // 해당 xml 안에 있는 Button 객체 생성
 
-        DashboardButton.setOnClickListener(new View.OnClickListener() {
+        MainButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), DashboardActivity.class);
+                Intent intent = new Intent(getActivity(), HomeActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+        MainButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), CompletedActivity.class);
                 startActivity(intent);
             }
         });
