@@ -76,6 +76,30 @@
         app:layout_constraintStart_toStartOf="@+id/et_name"
         app:layout_constraintTop_toBottomOf="@+id/et_name" />
 
+    <EditText
+        android:id="@+id/et_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:textColor="#000000"
+        android:textColorHint="#A0A0A0"
+        android:hint="이메일을 입력하세요"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/et_hakbun"
+        app:layout_constraintStart_toStartOf="@+id/et_hakbun"
+        app:layout_constraintTop_toBottomOf="@+id/et_hakbun" />
+
+    <TextView
+        android:id="@+id/tv_error_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FF0000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_email"
+        app:layout_constraintEnd_toEndOf="@+id/et_email"
+        tools:text="테스트 " />
+
     <Button
         android:id="@+id/btn_register"
         android:layout_width="0dp"
@@ -83,9 +107,9 @@
         android:layout_marginTop="16dp"
         android:text="회원가입"
         app:backgroundTint="#6799FF"
-        app:layout_constraintEnd_toEndOf="@+id/et_hakbun"
-        app:layout_constraintStart_toStartOf="@+id/et_hakbun"
-        app:layout_constraintTop_toBottomOf="@+id/et_hakbun" />
+        app:layout_constraintEnd_toEndOf="@+id/et_email"
+        app:layout_constraintStart_toStartOf="@+id/et_email"
+        app:layout_constraintTop_toBottomOf="@+id/et_email" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
