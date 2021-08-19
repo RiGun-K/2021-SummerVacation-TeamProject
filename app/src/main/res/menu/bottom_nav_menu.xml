@@ -8,12 +8,12 @@
     <item
         android:id="@+id/navigation_dashboard"
         android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="@string/title_dashboard" />
+        android:title="마이 페이지" />
 
     <item
         android:id="@+id/navigation_notifications"
         android:icon="@drawable/ic_notifications_black_24dp"
-        android:title="마이 페이지" />
+        android:title="프로젝트 생성" />
 
     <item
         android:id="@+id/navigation_sns"

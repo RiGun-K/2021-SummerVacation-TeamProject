@@ -4,14 +4,14 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class NotificationsActivity extends AppCompatActivity {
+public class HomeActivity2 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mypage);
-
-        // 마이 페이지 수정 및 저장 이후 관련
+        setContentView(R.layout.activity_mypage2);
+    
+        // 나의 프로젝트 리스트 관련
 
     }
 }

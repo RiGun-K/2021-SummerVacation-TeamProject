@@ -30,12 +30,12 @@
         </activity>
         <activity android:name=".LoginActivity" />
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".HomeActivity" />
+        <activity android:name=".IngActivity" />
         <activity android:name=".CompletedActivity" />
         <activity android:name=".DashboardActivity" />
         <activity android:name=".Dashboardfinal" />
-        <activity android:name=".NotificationsActivity" />
-        <activity android:name=".NotificationsActivity2" />
+        <activity android:name=".HomeActivity" />
+        <activity android:name=".HomeActivity2" />
     </application>
 
 </manifest>
