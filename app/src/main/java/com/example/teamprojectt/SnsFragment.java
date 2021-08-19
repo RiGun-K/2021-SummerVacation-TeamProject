@@ -1,5 +1,6 @@
 package com.example.teamprojectt;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,6 +24,14 @@ public class SnsFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_sns, container, false);
 
         et_sns = view.findViewById(R.id.et_id3);
+
+        et_sns.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), HomeActivity.class);
+                startActivity(intent);
+            }
+        });
 
         return view;
     }
