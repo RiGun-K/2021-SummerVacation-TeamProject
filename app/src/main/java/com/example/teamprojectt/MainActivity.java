@@ -38,12 +38,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-//        tv_id = findViewById(R.id.tv_id);
-//
-//        Intent intent = getIntent();
-//        String userID = intent.getStringExtra("userID");
-//
-//        tv_id.setText(userID);
+        tv_id = findViewById(R.id.tv_id);
+
+        Intent intent = getIntent();
+        String userID = intent.getStringExtra("userID");
+
+        tv_id.setText(userID);
 
 
         // 객체들을 생성
