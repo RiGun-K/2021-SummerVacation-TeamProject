@@ -8,7 +8,7 @@
     tools:context=".SnsFragment">
 
     <EditText
-    android:id="@+id/et_id3"
+    android:id="@+id/et_sns"
     android:layout_width="210dp"
     android:layout_height="44dp"
     android:layout_marginStart="8dp"
