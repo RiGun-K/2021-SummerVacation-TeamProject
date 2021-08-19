@@ -36,6 +36,7 @@
         <activity android:name=".Dashboardfinal" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".HomeActivity2" />
+        <activity android:name="SnsActivity" />
     </application>
 
 </manifest>
