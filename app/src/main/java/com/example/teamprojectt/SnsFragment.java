@@ -23,7 +23,7 @@ public class SnsFragment extends Fragment {
     public View onCreateView(@NonNull @NotNull LayoutInflater inflater, @Nullable @org.jetbrains.annotations.Nullable ViewGroup container, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_sns, container, false);
 
-        et_sns = view.findViewById(R.id.et_id3);
+        et_sns = view.findViewById(R.id.et_sns);
 
         et_sns.setOnClickListener(new View.OnClickListener() {
             @Override
