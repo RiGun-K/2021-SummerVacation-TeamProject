@@ -72,6 +72,7 @@ public class DashboardActivity extends AppCompatActivity {
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
+                            Toast.makeText(getApplicationContext(), "회원 등록에 실패하였습니다.(php 오류)", Toast.LENGTH_SHORT).show();
                         }
 
                     }

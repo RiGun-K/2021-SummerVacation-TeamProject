@@ -22,11 +22,13 @@ public class Dashboardfinal extends AppCompatActivity {
 
 
     Intent intent = getIntent();
-    String userID = intent.getStringExtra("userID");
+    String idUser = intent.getStringExtra("idUser");
     String projectName = intent.getStringExtra("projectName");
 
-    tv_id.setText(userID);
+    tv_id.setText(idUser);
     tv_pass.setText(projectName);
+
+
 
     }
 

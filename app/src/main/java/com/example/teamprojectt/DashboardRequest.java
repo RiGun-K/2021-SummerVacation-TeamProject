@@ -23,6 +23,15 @@ public class DashboardRequest extends StringRequest {
         map.put("phoneNumber",phoneNumber+"");
     }
 
+    // insert into USER -> JOIN 으로 바꿧음
+    // 하지만 회원등록이 되지않음 ,, 다시 점검
+
+    // 08/24
+    // http://su1318ho.dothome.co.kr/Join.php 로 들어가면 php 상태확인가능
+    // You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 오류
+    // INSERT INTO JOIN VALUES ~~   => INSERT INTO `JOIN` VALUES ~~ 로 바꾸기
+
+
     @Override
     protected Map<String, String> getParams() throws AuthFailureError {
         return map;

@@ -33,10 +33,10 @@
         <activity android:name=".MainFragment" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".HomeActivity2" />
-        <activity android:name=".IngActivity" />
-        <activity android:name=".CompletedActivity" />
         <activity android:name=".DashboardActivity" />
         <activity android:name=".Dashboardfinal" />
+        <activity android:name=".IngActivity" />
+        <activity android:name=".CompletedActivity" />
         <activity android:name="SnsActivity" />
     </application>
 
