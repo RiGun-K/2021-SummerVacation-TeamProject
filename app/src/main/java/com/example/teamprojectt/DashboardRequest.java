@@ -34,6 +34,12 @@ public class DashboardRequest extends StringRequest {
     // 다만 DB에 넘어오는 phoneNumber 값 처음에 0이 안나옴
 
 
+    // POST방식은 PHP 로 데이터값을 받아와서 불러들일 수 없다 ( 보안기능 )
+    // POST는 //요청한 값이 보이지 않는다. 보안기능
+
+    // 출처: https://jh91.tistory.com/67 [☁️구름이의 클라우드☁️]
+
+
     @Override
     protected Map<String, String> getParams() throws AuthFailureError {
         return map;
