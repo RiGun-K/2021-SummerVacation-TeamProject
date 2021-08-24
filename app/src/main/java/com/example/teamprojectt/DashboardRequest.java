@@ -30,6 +30,8 @@ public class DashboardRequest extends StringRequest {
     // http://su1318ho.dothome.co.kr/Join.php 로 들어가면 php 상태확인가능
     // You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 오류
     // INSERT INTO JOIN VALUES ~~   => INSERT INTO `JOIN` VALUES ~~ 로 바꾸기
+    
+    // 다만 DB에 넘어오는 phoneNumber 값 처음에 0이 안나옴
 
 
     @Override
