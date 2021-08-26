@@ -2,20 +2,12 @@ package com.example.teamprojectt;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.method.HideReturnsTransformationMethod;
-import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
-import android.app.Dialog;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AlertDialog;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -64,6 +56,20 @@ public class DashboardActivity extends AppCompatActivity {
                             boolean success = jsonObject.getBoolean("success");
                             if (success) { // 회원등록에 성공한 경우
                                 Toast.makeText(getApplicationContext(), "회원 등록에 성공하였습니다.", Toast.LENGTH_SHORT).show();
+
+                                // Json 객체로 담는다.
+                                String idUser = jsonObject.getString("idUser");
+                                String projectName = jsonObject.getString("projectName");
+                                String eMail = jsonObject.getString("eMail");
+                                int phoneNumber = jsonObject.getInt("phoneNumber");
+
+                                // putExtra
+
+                                intent.putExtra( "idUser", idUser );
+                                intent.putExtra( "projectName", projectName );
+                                intent.putExtra( "eMail", eMail );
+                                intent.putExtra( "phoneNumber", phoneNumber );
+
                                 Intent intent = new Intent(DashboardActivity.this, Dashboardfinal.class);
                                 startActivity(intent);
                             } else { // 회원등록에 실패한 경우
