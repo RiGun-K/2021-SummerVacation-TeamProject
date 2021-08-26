@@ -55,13 +55,15 @@ public class DashboardActivity extends AppCompatActivity {
                             JSONObject jsonObject = new JSONObject(response);
                             boolean success = jsonObject.getBoolean("success");
                             if (success) { // 회원등록에 성공한 경우
-                                Toast.makeText(getApplicationContext(), "회원 등록에 성공하였습니다.", Toast.LENGTH_SHORT).show();
 
                                 // Json 객체로 담는다.
                                 String idUser = jsonObject.getString("idUser");
                                 String projectName = jsonObject.getString("projectName");
                                 String eMail = jsonObject.getString("eMail");
                                 int phoneNumber = jsonObject.getInt("phoneNumber");
+
+                                Toast.makeText(getApplicationContext(), "회원 등록에 성공하였습니다.", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(DashboardActivity.this, Dashboardfinal.class);
 
                                 // putExtra
 
@@ -70,7 +72,6 @@ public class DashboardActivity extends AppCompatActivity {
                                 intent.putExtra( "eMail", eMail );
                                 intent.putExtra( "phoneNumber", phoneNumber );
 
-                                Intent intent = new Intent(DashboardActivity.this, Dashboardfinal.class);
                                 startActivity(intent);
                             } else { // 회원등록에 실패한 경우
                                 Toast.makeText(getApplicationContext(), "회원 등록에 실패하였습니다,", Toast.LENGTH_SHORT).show();
