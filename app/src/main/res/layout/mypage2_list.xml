@@ -8,6 +8,9 @@
     android:padding="10dp">
 
 
+    // JOIN 테이블의 모든 항목을 표시할 레이아웃
+
+    // 항목번호
     <TextView
         android:id="@+id/textView_list_number"
         android:layout_width="0dp"
@@ -17,6 +20,7 @@
         android:padding="5dp" />
 
 
+    // 유저 아이디
     <TextView
         android:id="@+id/textView_list_idUser"
         android:layout_width="0dp"
@@ -25,7 +29,7 @@
         android:layout_margin="5dp"
         android:padding="5dp" />
 
-
+    // 프로젝트 이름
     <TextView
         android:id="@+id/textView_list_projectName"
         android:layout_width="0dp"
@@ -34,6 +38,7 @@
         android:layout_margin="5dp"
         android:padding="5dp" />
 
+    // 이메일
     <TextView
         android:id="@+id/textView_list_eMail"
         android:layout_width="0dp"
@@ -42,6 +47,7 @@
         android:layout_margin="5dp"
         android:padding="5dp" />
 
+    // 폰번호
     <TextView
         android:id="@+id/textView_list_phoneNumber"
         android:layout_width="0dp"
