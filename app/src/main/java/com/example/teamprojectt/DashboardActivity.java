@@ -48,6 +48,7 @@ public class DashboardActivity extends AppCompatActivity {
 
 
 
+
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -57,13 +58,15 @@ public class DashboardActivity extends AppCompatActivity {
                             if (success) { // 회원등록에 성공한 경우
 
                                 // Json 객체로 담는다.
-                                String idUser = jsonObject.getString("idUser");
-                                String projectName = jsonObject.getString("projectName");
-                                String eMail = jsonObject.getString("eMail");
-                                int phoneNumber = jsonObject.getInt("phoneNumber");
+//                                String idUser = jsonObject.getString("idUser");
+//                                String projectName = jsonObject.getString("projectName");
+//                                String eMail = jsonObject.getString("eMail");
+//                                String phoneNumber = jsonObject.getString("phoneNumber");
 
                                 Toast.makeText(getApplicationContext(), "회원 등록에 성공하였습니다.", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(DashboardActivity.this, Dashboardfinal.class);
+
+
 
                                 // putExtra
 
