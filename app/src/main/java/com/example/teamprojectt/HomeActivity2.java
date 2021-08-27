@@ -151,21 +151,23 @@ public class HomeActivity2 extends AppCompatActivity {
             JSONObject jsonObject = new JSONObject(mJsonString);
             JSONArray jsonArray = jsonObject.getJSONArray(TAG_JSON);
 
-            for(int i=0;i<jsonArray.length();i++){
+            // 배열의 인덱스는 0부터 시작하므로 length(길이) 에서 -1 해준다.
+            for(int i=0; i<jsonArray.length()-1; i++){
 
                 JSONObject item = jsonArray.getJSONObject(i);
 
-                String id = item.getString(TAG_IDUSER);
-                String name = item.getString(TAG_PROJECTNAME);
-                String address = item.getString(TAG_EMAIL);
-                Integer phonenumber = item.getInt(TAG_PHONENUMBER);
+                String idUser = item.getString(TAG_IDUSER);
+                String projectName = item.getString(TAG_PROJECTNAME);
+                String eMail = item.getString(TAG_EMAIL);
+
+                String phoneNumber = item.getString(TAG_PHONENUMBER);
 
                 HashMap<String,String> hashMap = new HashMap<>();
 
-                hashMap.put(TAG_IDUSER, id);
-                hashMap.put(TAG_PROJECTNAME, name);
-                hashMap.put(TAG_EMAIL, address);
-                hashMap.put(TAG_PHONENUMBER, phonenumber+"");
+                hashMap.put(TAG_IDUSER, idUser);
+                hashMap.put(TAG_PROJECTNAME, projectName);
+                hashMap.put(TAG_EMAIL, eMail);
+                hashMap.put(TAG_PHONENUMBER, phoneNumber);
 
                 mArrayList.add(hashMap);
             }
