@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private Button Button,Button2;
     private TextView tv_id;
 
+    // 노트북과 깃허브 및 녹스 연동 성공 !
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {    // 액티비티 시작시 처음으로 실행
