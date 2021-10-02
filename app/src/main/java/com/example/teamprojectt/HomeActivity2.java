@@ -3,13 +3,19 @@ package com.example.teamprojectt;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -18,6 +24,7 @@ import org.json.JSONObject;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
@@ -27,17 +34,25 @@ public class HomeActivity2 extends AppCompatActivity {
 
     // DB 연결
 
+    private static String IP_ADDRESS = "10.0.2.2";
     private static String TAG = "phptest_HomeActivity2";
+
     private static final String TAG_JSON = "webnautes";
     private static final String TAG_IDUSER = "idUser";
     private static final String TAG_PROJECTNAME = "projectName";
     private static final String TAG_EMAIL = "eMail";
     private static final String TAG_PHONENUMBER = "phoneNumber";
 
+
+    private EditText mEditTextName;
+    private EditText mEditTextCountry;
     private TextView mTextViewResult;
-    ArrayList<HashMap<String, String>> mArrayList;
-    ListView mlistView;
-    String mJsonString;
+    private ArrayList<PersonalData> mArrayList;
+    private UsersAdapter mAdapter;
+    private RecyclerView mRecyclerView;
+    private EditText mEditTextSearchKeyword;
+    private String mJsonString;
+
 
     ///////////////////////////////////////////////////
 
@@ -47,11 +62,28 @@ public class HomeActivity2 extends AppCompatActivity {
         setContentView(R.layout.activity_mypage2);
 
         mTextViewResult = (TextView) findViewById(R.id.textView_main_result);
-        mlistView = (ListView) findViewById(R.id.listView_main_list);
+        mRecyclerView = (RecyclerView) findViewById(R.id.listView_main_list);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        mTextViewResult.setMovementMethod(new ScrollingMovementMethod());
+
         mArrayList = new ArrayList<>();
 
-        GetData task = new GetData();
-        task.execute("http://su1318ho.dothome.co.kr/getjson.php");
+        mAdapter = new UsersAdapter(this, mArrayList);
+        mRecyclerView.setAdapter(mAdapter);
+
+
+        Button button_all = (Button) findViewById(R.id.button_main_all);
+        button_all.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+                mArrayList.clear();
+                mAdapter.notifyDataSetChanged();
+
+                GetData task = new GetData();
+                task.execute( "http://" + IP_ADDRESS + "/getjson.php", "");
+            }
+        });
 
     }
 
@@ -92,7 +124,7 @@ public class HomeActivity2 extends AppCompatActivity {
         protected String doInBackground(String... params) {
 
             String serverURL = params[0];
-
+            String postParameters = params[1];
 
             try {
 
@@ -102,8 +134,14 @@ public class HomeActivity2 extends AppCompatActivity {
 
                 httpURLConnection.setReadTimeout(5000);
                 httpURLConnection.setConnectTimeout(5000);
+                httpURLConnection.setRequestMethod("POST");
+                httpURLConnection.setDoInput(true);
                 httpURLConnection.connect();
 
+                OutputStream outputStream = httpURLConnection.getOutputStream();
+                outputStream.write(postParameters.getBytes("UTF-8"));
+                outputStream.flush();
+                outputStream.close();
 
                 int responseStatusCode = httpURLConnection.getResponseCode();
                 Log.d(TAG, "response code - " + responseStatusCode);
@@ -147,6 +185,13 @@ public class HomeActivity2 extends AppCompatActivity {
 
 
     private void showResult(){
+
+        String TAG_JSON="webnautes";
+        String TAG_IDUSER = "iduser";
+        String TAG_PROJECTNAME = "projectname";
+        String TAG_EMAIL ="email";
+        String TAG_PHONENUMBER = "phonenumber";
+
         try {
             JSONObject jsonObject = new JSONObject(mJsonString);
             JSONArray jsonArray = jsonObject.getJSONArray(TAG_JSON);
@@ -162,23 +207,18 @@ public class HomeActivity2 extends AppCompatActivity {
 
                 String phoneNumber = item.getString(TAG_PHONENUMBER);
 
-                HashMap<String,String> hashMap = new HashMap<>();
+                PersonalData personalData = new PersonalData();
 
-                hashMap.put(TAG_IDUSER, idUser);
-                hashMap.put(TAG_PROJECTNAME, projectName);
-                hashMap.put(TAG_EMAIL, eMail);
-                hashMap.put(TAG_PHONENUMBER, phoneNumber);
+                personalData.setMember_iduser(idUser);
+                personalData.setMember_projectname(projectName);
+                personalData.setMember_email(eMail);
+                personalData.setMember_phonenumber(phoneNumber);
 
-                mArrayList.add(hashMap);
+                mArrayList.add(personalData);
+                mAdapter.notifyDataSetChanged();
             }
 
-            ListAdapter adapter = new SimpleAdapter(
-                    HomeActivity2.this, mArrayList, R.layout.mypage2_list,
-                    new String[]{TAG_IDUSER,TAG_PROJECTNAME, TAG_EMAIL, TAG_PHONENUMBER},
-                    new int[]{R.id.textView_list_number, R.id.textView_list_idUser, R.id.textView_list_projectName, R.id.textView_list_eMail, R.id.textView_list_phoneNumber}
-            );
 
-            mlistView.setAdapter(adapter);
 
         } catch (JSONException e) {
 

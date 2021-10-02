@@ -14,7 +14,7 @@
     // 항목번호
     <TextView
         android:id="@+id/textView_list_number"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:layout_margin="5dp"
