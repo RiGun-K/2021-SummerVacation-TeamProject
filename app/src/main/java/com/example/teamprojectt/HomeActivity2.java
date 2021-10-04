@@ -55,6 +55,7 @@ public class HomeActivity2 extends AppCompatActivity {
 
 
     ///////////////////////////////////////////////////
+    // 10/04 오류 해결
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
