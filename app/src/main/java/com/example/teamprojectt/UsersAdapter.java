@@ -25,17 +25,17 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.CustomViewHo
     }
 
     class CustomViewHolder extends RecyclerView.ViewHolder {
-        protected TextView iduser;
-        protected TextView projectname;
-        protected TextView email;
-        protected TextView phonenumber;
+        protected TextView idUser;
+        protected TextView projectName;
+        protected TextView eMail;
+        protected TextView phoneNumber;
 
         public CustomViewHolder(View view) {
             super(view);
-            this.iduser = (TextView) view.findViewById(R.id.textView_list_idUser);
-            this.projectname = (TextView) view.findViewById(R.id.textView_list_projectName);
-            this.email = (TextView) view.findViewById(R.id.textView_list_eMail);
-            this.phonenumber = (TextView) view.findViewById(R.id.textView_list_phoneNumber);
+            this.idUser = (TextView) view.findViewById(R.id.textView_list_idUser);
+            this.projectName = (TextView) view.findViewById(R.id.textView_list_projectName);
+            this.eMail = (TextView) view.findViewById(R.id.textView_list_eMail);
+            this.phoneNumber = (TextView) view.findViewById(R.id.textView_list_phoneNumber);
 
         }
     }
@@ -43,7 +43,7 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.CustomViewHo
 
     @Override
     public CustomViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_list, null);
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.mypage2_list, null);
         CustomViewHolder viewHolder = new CustomViewHolder(view);
 
         return viewHolder;
@@ -52,10 +52,10 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.CustomViewHo
     @Override
     public void onBindViewHolder(@NonNull CustomViewHolder viewholder, int position) {
 
-        viewholder.iduser.setText(mList.get(position).getMember_iduser());
-        viewholder.projectname.setText(mList.get(position).getMember_projectname());
-        viewholder.email.setText(mList.get(position).getMember_email());
-        viewholder.phonenumber.setText(mList.get(position).getMember_phonenumber());
+        viewholder.idUser.setText(mList.get(position).getMember_idUser());
+        viewholder.projectName.setText(mList.get(position).getMember_projectName());
+        viewholder.eMail.setText(mList.get(position).getMember_eMail());
+        viewholder.phoneNumber.setText(mList.get(position).getMember_phoneNumber());
     }
 
     @Override

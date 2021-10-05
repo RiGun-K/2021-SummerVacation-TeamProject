@@ -175,6 +175,7 @@ public class HomeActivity2 extends AppCompatActivity {
 
             } catch (Exception e) {
 
+                // InsertData => GetData
                 Log.d(TAG, "InsertData: Error ", e);
                 errorString = e.toString();
 
@@ -187,11 +188,11 @@ public class HomeActivity2 extends AppCompatActivity {
 
     private void showResult(){
 
-        String TAG_JSON="webnautes";
-        String TAG_IDUSER = "iduser";
-        String TAG_PROJECTNAME = "projectname";
-        String TAG_EMAIL ="email";
-        String TAG_PHONENUMBER = "phonenumber";
+        String TAG_JSON="su1318ho";
+        String TAG_IDUSER = "idUser";
+        String TAG_PROJECTNAME = "projectName";
+        String TAG_EMAIL ="eMail";
+        String TAG_PHONENUMBER = "phoneNumber";
 
         try {
             JSONObject jsonObject = new JSONObject(mJsonString);
@@ -215,8 +216,8 @@ public class HomeActivity2 extends AppCompatActivity {
                 personalData.setMember_email(eMail);
                 personalData.setMember_phonenumber(phoneNumber);
 
-                mArrayList.add(personalData);
-                mAdapter.notifyDataSetChanged();
+//                mArrayList.add(personalData);
+//                mAdapter.notifyDataSetChanged();
             }
 
 
