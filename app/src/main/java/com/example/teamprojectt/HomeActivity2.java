@@ -64,7 +64,7 @@ public class HomeActivity2 extends AppCompatActivity {
 
         GetData task = new GetData();
         task.execute("http://su1318ho.dothome.co.kr/getjson.php");
-        
+
     }
 
     ///////////////////////////////////////////////////
@@ -104,7 +104,7 @@ public class HomeActivity2 extends AppCompatActivity {
         protected String doInBackground(String... params) {
 
             String serverURL = params[0];
-            String postParameters = params[1];
+//
 
             try {
 
@@ -114,14 +114,8 @@ public class HomeActivity2 extends AppCompatActivity {
 
                 httpURLConnection.setReadTimeout(5000);
                 httpURLConnection.setConnectTimeout(5000);
-                httpURLConnection.setRequestMethod("POST");
-                httpURLConnection.setDoInput(true);
                 httpURLConnection.connect();
 
-                OutputStream outputStream = httpURLConnection.getOutputStream();
-                outputStream.write(postParameters.getBytes("UTF-8"));
-                outputStream.flush();
-                outputStream.close();
 
                 int responseStatusCode = httpURLConnection.getResponseCode();
                 Log.d(TAG, "response code - " + responseStatusCode);
@@ -155,7 +149,7 @@ public class HomeActivity2 extends AppCompatActivity {
             } catch (Exception e) {
 
                 // InsertData => GetData
-                Log.d(TAG, "GetData: Error ", e);
+                Log.d(TAG, "InsertData: Error ", e);
                 errorString = e.toString();
 
                 return null;
@@ -164,7 +158,10 @@ public class HomeActivity2 extends AppCompatActivity {
         }
     }
 
-
+////////////
+// 10/06  //
+////////////
+    
     private void showResult(){
 
         String TAG_JSON="webnautes";
