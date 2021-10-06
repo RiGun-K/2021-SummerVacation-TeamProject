@@ -51,36 +51,20 @@ public class HomeActivity2 extends AppCompatActivity {
 
     ///////////////////////////////////////////////////
     // 10/04 오류 해결
+    // 10/06 RecyclerView => ListView로 다시수정
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mypage2);
 
-        mTextViewResult = (TextView) findViewById(R.id.textView_main_result);
-        mRecyclerView = (RecyclerView) findViewById(R.id.listView_main_list);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-        mTextViewResult.setMovementMethod(new ScrollingMovementMethod());
-
+        mTextViewResult = (TextView)findViewById(R.id.textView_main_result);
+        mlistView = (ListView)findViewById(R.id.listView_main_list);
         mArrayList = new ArrayList<>();
 
-        mAdapter = new UsersAdapter(this, mArrayList);
-        mRecyclerView.setAdapter(mAdapter);
-
-
-        Button button_all = (Button) findViewById(R.id.button_main_all);
-        button_all.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-
-                mArrayList.clear();
-                mAdapter.notifyDataSetChanged();
-
-                GetData task = new GetData();
-                task.execute( "http://" + IP_ADDRESS + "/getjson.php", "");
-            }
-        });
-
+        GetData task = new GetData();
+        task.execute("http://su1318ho.dothome.co.kr/getjson.php");
+        
     }
 
     ///////////////////////////////////////////////////
