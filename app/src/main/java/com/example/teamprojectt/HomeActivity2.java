@@ -34,7 +34,6 @@ public class HomeActivity2 extends AppCompatActivity {
 
     // DB 연결
 
-    private static String IP_ADDRESS = "10.0.2.2";
     private static String TAG = "phptest_HomeActivity2";
 
     private static final String TAG_JSON = "webnautes";
@@ -44,14 +43,10 @@ public class HomeActivity2 extends AppCompatActivity {
     private static final String TAG_PHONENUMBER = "phoneNumber";
 
 
-    private EditText mEditTextName;
-    private EditText mEditTextCountry;
     private TextView mTextViewResult;
-    private ArrayList<PersonalData> mArrayList;
-    private UsersAdapter mAdapter;
-    private RecyclerView mRecyclerView;
-    private EditText mEditTextSearchKeyword;
-    private String mJsonString;
+    ArrayList<HashMap<String, String>> mArrayList;
+    ListView mlistView;
+    String mJsonString;
 
 
     ///////////////////////////////////////////////////
@@ -176,7 +171,7 @@ public class HomeActivity2 extends AppCompatActivity {
             } catch (Exception e) {
 
                 // InsertData => GetData
-                Log.d(TAG, "InsertData: Error ", e);
+                Log.d(TAG, "GetData: Error ", e);
                 errorString = e.toString();
 
                 return null;
@@ -188,7 +183,7 @@ public class HomeActivity2 extends AppCompatActivity {
 
     private void showResult(){
 
-        String TAG_JSON="su1318ho";
+        String TAG_JSON="webnautes";
         String TAG_IDUSER = "idUser";
         String TAG_PROJECTNAME = "projectName";
         String TAG_EMAIL ="eMail";
@@ -199,7 +194,7 @@ public class HomeActivity2 extends AppCompatActivity {
             JSONArray jsonArray = jsonObject.getJSONArray(TAG_JSON);
 
             // 배열의 인덱스는 0부터 시작하므로 length(길이) 에서 -1 해준다.
-            for(int i=0; i<jsonArray.length()-1; i++){
+            for(int i=0; i<jsonArray.length(); i++){
 
                 JSONObject item = jsonArray.getJSONObject(i);
 
@@ -211,10 +206,10 @@ public class HomeActivity2 extends AppCompatActivity {
 
                 PersonalData personalData = new PersonalData();
 
-                personalData.setMember_iduser(idUser);
-                personalData.setMember_projectname(projectName);
-                personalData.setMember_email(eMail);
-                personalData.setMember_phonenumber(phoneNumber);
+                personalData.setMember_idUser(idUser);
+                personalData.setMember_projectName(projectName);
+                personalData.setMember_eMail(eMail);
+                personalData.setMember_phoneNumber(phoneNumber);
 
 //                mArrayList.add(personalData);
 //                mAdapter.notifyDataSetChanged();

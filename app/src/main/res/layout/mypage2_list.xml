@@ -10,6 +10,7 @@
 
     // JOIN 테이블의 모든 항목을 표시할 레이아웃
     // 즉, activity_mypage2.xml 내 RecyclerView 를 나타내는 리스트
+    // id = listView_main_list
 
     // 항목번호
     <TextView

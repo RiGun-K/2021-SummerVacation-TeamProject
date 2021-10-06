@@ -10,7 +10,8 @@
 
     // Recycler View 에는 DB에서 가져온 JSON 형식의 데이터를
     // 파싱해서 항목별로 표시
-    <androidx.recyclerview.widget.RecyclerView
+
+    <ListView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="6"
@@ -18,13 +19,6 @@
         android:padding="5dp"
         android:id="@+id/listView_main_list" />
 
-    <Button
-        android:layout_margin="2dp"
-        android:id="@+id/button_main_all"
-        android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:layout_height="0dp"
-        android:text="전체보기" />
 
     // TextView 에는 JSON 형식의 데이터 또는 각종 에러 표시
     <TextView
