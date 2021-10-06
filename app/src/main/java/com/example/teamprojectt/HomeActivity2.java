@@ -161,14 +161,9 @@ public class HomeActivity2 extends AppCompatActivity {
 ////////////
 // 10/06  //
 ////////////
-    
+
     private void showResult(){
 
-        String TAG_JSON="webnautes";
-        String TAG_IDUSER = "idUser";
-        String TAG_PROJECTNAME = "projectName";
-        String TAG_EMAIL ="eMail";
-        String TAG_PHONENUMBER = "phoneNumber";
 
         try {
             JSONObject jsonObject = new JSONObject(mJsonString);
@@ -185,17 +180,28 @@ public class HomeActivity2 extends AppCompatActivity {
 
                 String phoneNumber = item.getString(TAG_PHONENUMBER);
 
-                PersonalData personalData = new PersonalData();
+                HashMap<String,String> hashMap = new HashMap<>();
 
-                personalData.setMember_idUser(idUser);
-                personalData.setMember_projectName(projectName);
-                personalData.setMember_eMail(eMail);
-                personalData.setMember_phoneNumber(phoneNumber);
+                hashMap.put(TAG_IDUSER, idUser);
+                hashMap.put(TAG_PROJECTNAME, projectName);
+                hashMap.put(TAG_EMAIL, eMail);
+                hashMap.put(TAG_PHONENUMBER, phoneNumber);
+
+                mArrayList.add(hashMap);
 
 //                mArrayList.add(personalData);
 //                mAdapter.notifyDataSetChanged();
             }
 
+
+            ListAdapter adapter = new SimpleAdapter(
+                    HomeActivity2.this, mArrayList, R.layout.mypage2_list,
+                    new String[]{TAG_IDUSER, TAG_PROJECTNAME, TAG_EMAIL, TAG_PHONENUMBER},
+                    new int[]{R.id.textView_list_idUser, R.id.textView_list_projectName,
+                              R.id.textView_list_eMail, R.id.textView_list_phoneNumber }
+            );
+
+            mlistView.setAdapter(adapter);
 
 
         } catch (JSONException e) {
