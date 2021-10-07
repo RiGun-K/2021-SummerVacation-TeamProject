@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "705077343049",
+    "project_id": "rigun-53907",
+    "storage_bucket": "rigun-53907.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:705077343049:android:1d479ac006e4af40762098",
+        "android_client_info": {
+          "package_name": "com.example.teamprojectt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "705077343049-mm6gfcmfao9m5q50adl94k6g714han76.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.teamprojectt",
+            "certificate_hash": "8900cfc1e235be218719a24a7efbf9e72221e58c"
+          }
+        },
+        {
+          "client_id": "705077343049-qsvb2absk5072v7lc8covluqi8fmvmnu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvVrIiizb2WhQspWdycQW2lGwUylRL3n0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "705077343049-qsvb2absk5072v7lc8covluqi8fmvmnu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

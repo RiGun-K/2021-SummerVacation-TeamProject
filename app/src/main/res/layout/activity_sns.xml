@@ -7,6 +7,8 @@
     tools:context=".SnsActivity" >
 
 
+    // 회의록 테마에서 댓글 입력이후 화면
+
     <EditText
         android:id="@+id/jo_id"
         android:layout_width="210dp"

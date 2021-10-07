@@ -7,6 +7,8 @@
     android:orientation="vertical"
     tools:context=".SnsFragment">
 
+    // 회의록 테마 화면
+
     <EditText
     android:id="@+id/et_sns"
     android:layout_width="210dp"

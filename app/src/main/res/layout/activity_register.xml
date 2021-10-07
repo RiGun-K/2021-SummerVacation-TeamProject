@@ -8,19 +8,6 @@
 
     // 회원가입
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/white">
-
-        <ImageView
-            android:layout_width="150dp"
-            android:layout_height="140dp"
-            android:layout_gravity="center"
-            android:layout_marginBottom="16dp"
-            android:background="@null"
-            android:contentDescription="TODO"
-            android:src="@drawable/logo_transparent" />
 
     <EditText
         android:id="@+id/et_id"
@@ -145,6 +132,6 @@
         app:layout_constraintTop_toBottomOf="@+id/et_email" />
 
 
-    </ScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
