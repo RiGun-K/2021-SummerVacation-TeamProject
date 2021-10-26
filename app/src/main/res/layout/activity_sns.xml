@@ -4,35 +4,44 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
     tools:context=".SnsActivity" >
 
 
     // 회의록 테마에서 댓글 입력이후 화면
 
-    <Button
-        android:id="@+id/btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="save"
-        android:layout_alignParentRight="true"
-        android:onClick="clickSave"/>
-    // 해당 클래스에서 clickSave 메소드 정의
-
     <EditText
-        android:id="@+id/et"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_toLeftOf="@+id/btn"
-        android:hint="댓글을 입력하세요"
-        android:inputType="text" />
-
-    <TextView
-        android:id="@+id/tv"
+        android:id="@+id/et_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_centerInParent="true"
+        android:hint="닉네임을 설정해주세요"
+        android:gravity="center"
         android:padding="8dp"
-        android:textStyle="bold"
-        android:layout_below="@+id/et"/>
+        app:backgroundTint="#6799FF"
+        android:background="@drawable/back_et_name"
+        android:textCursorDrawable="@drawable/et_name_cursor"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_profile"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerInParent="true"
+        android:layout_above="@id/et_name"
+        android:layout_marginBottom="16dp"
+        android:src="@mipmap/ic_launcher"
+        android:clickable="true"
+        android:onClick="clickImage"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="입장"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp"
+        app:backgroundTint="#6799FF"
+        android:onClick="clickBtn"/>
+
 
 </RelativeLayout>
