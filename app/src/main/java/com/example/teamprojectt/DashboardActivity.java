@@ -150,7 +150,7 @@ public class DashboardActivity extends AppCompatActivity {
         @Override
         protected String doInBackground(String... params) {
 
-            String server_url = "http://su1318ho.dothome.co.kr/Register.php";
+            String server_url = "http://su1318ho.dothome.co.kr/content.php";
             URL url;
             String response = "";
             try {

@@ -95,7 +95,7 @@ public class Dashboardfinal extends AppCompatActivity {
                 String title = params[1];
                 String content = params[2];
 
-                String server_url = "http://su1318ho.dothome.co.kr/Register.php";
+                String server_url = "http://su1318ho.dothome.co.kr/content.php";
 
 
                 URL url;
