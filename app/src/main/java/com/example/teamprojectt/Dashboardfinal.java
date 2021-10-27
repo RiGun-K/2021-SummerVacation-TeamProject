@@ -1,44 +1,148 @@
 package com.example.teamprojectt;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.net.Uri;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
+import javax.net.ssl.HttpsURLConnection;
 
 public class Dashboardfinal extends AppCompatActivity {
 
-    private TextView tv_id, tv_pass, tv_name, tv_age;
+    // 로그에 사용할 TAG 변수 선언
+    final private String TAG = getClass().getSimpleName();
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_final);
+    // 사용할 컴포넌트 선언
+    EditText title_et, content_et;
+    Button reg_button;
+
+    // 유저아이디 변수
+    String userid = "";
+
+        @Override
+        protected void onCreate (Bundle savedInstanceState){
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_final);
+
+// ListActivity 에서 넘긴 userid 를 변수로 받음
+            userid = getIntent().getStringExtra("userID");
+
+// 컴포넌트 초기화
+            title_et = findViewById(R.id.title_et);
+            content_et = findViewById(R.id.content_et);
+            reg_button = findViewById(R.id.reg_button);
+
+// 버튼 이벤트 추가
+            reg_button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+// 게시물 등록 함수
+                    RegBoard regBoard = new RegBoard();
+                    regBoard.execute(userid, title_et.getText().toString(), content_et.getText().toString());
+                }
+            });
+
+        }
+
+        class RegBoard extends AsyncTask<String, Void, String> {
+
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+
+                Log.d(TAG, "onPreExecute");
+            }
 
 
-        tv_id = findViewById(R.id.tv_id);
-        tv_pass = findViewById(R.id.tv_pass);
-        tv_name = findViewById(R.id.tv_name);
-        tv_age = findViewById(R.id.tv_age);
+            @Override
+            protected void onPostExecute(String result) {
+                super.onPostExecute(result);
+                Log.d(TAG, "onPostExecute, " + result);
+
+                if (result.equals("success")) {
+// 결과값이 success 이면
+// 토스트 메시지를 뿌리고
+// 이전 액티비티(ListActivity)로 이동,
+// 이때 ListActivity 의 onResume() 함수 가 호출되며, 데이터를 새로 고침
+                    Toast.makeText(Dashboardfinal.this, "등록되었습니다.", Toast.LENGTH_SHORT).show();
+                    finish();
+                } else {
+                    Toast.makeText(Dashboardfinal.this, result, Toast.LENGTH_SHORT).show();
+                }
+
+            }
 
 
-        Intent intent = getIntent();
+            @Override
+            protected String doInBackground(String... params) {
 
-        String idUser = intent.getStringExtra("idUser");
-        String projectName = intent.getStringExtra("projectName");
-        String eMail = intent.getStringExtra("eMail");
+                String userid = params[0];
+                String title = params[1];
+                String content = params[2];
 
-        // Int 형 데이터는 기본값 0 이나 1을 주어야 함 !!
-        Integer phoneNumber = intent.getIntExtra("phoneNumber",0);
-
-        tv_id.setText(idUser);
-        tv_pass.setText(projectName);
-        tv_name.setText(eMail);
-
-        // Int 형은 "" 을 줘야함 !
-        tv_age.setText(phoneNumber+"");
+                String server_url = "http://su1318ho.dothome.co.kr/Register.php";
 
 
+                URL url;
+                String response = "";
+                try {
+                    url = new URL(server_url);
+
+                    HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                    conn.setReadTimeout(15000);
+                    conn.setConnectTimeout(15000);
+                    conn.setRequestMethod("POST");
+                    conn.setDoInput(true);
+                    conn.setDoOutput(true);
+                    Uri.Builder builder = new Uri.Builder()
+                            .appendQueryParameter("userid", userid)
+                            .appendQueryParameter("title", title)
+                            .appendQueryParameter("content", content);
+                    String query = builder.build().getEncodedQuery();
+
+                    OutputStream os = conn.getOutputStream();
+                    BufferedWriter writer = new BufferedWriter(
+                            new OutputStreamWriter(os, "UTF-8"));
+                    writer.write(query);
+                    writer.flush();
+                    writer.close();
+                    os.close();
+
+                    conn.connect();
+                    int responseCode = conn.getResponseCode();
+
+                    if (responseCode == HttpsURLConnection.HTTP_OK) {
+                        String line;
+                        BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                        while ((line = br.readLine()) != null) {
+                            response += line;
+                        }
+                    } else {
+                        response = "";
+
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                return response;
+            }
+        }
     }
 
-}
+

@@ -1,10 +1,17 @@
 package com.example.teamprojectt;
 
+import android.app.ListActivity;
 import android.content.Intent;
+import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,90 +20,181 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.ArrayList;
+
+import javax.net.ssl.HttpsURLConnection;
+
 public class DashboardActivity extends AppCompatActivity {
 
-    private EditText jo_id, jo_pass, jo_email, jo_number;
-    private Button jo_register;
+    // 로그에 사용할 TAG 변수
+    final private String TAG = getClass().getSimpleName();
 
+    ListView listView;
+    Button reg_button;
+    //    String et_id = "";
+    String userID = "";
+
+    // 리스트뷰 에 사용할 제목 배열
+    ArrayList<String> titlelist = new ArrayList<>();
+    // 클릭시 게시물 번호를 담기위한 배열
+    ArrayList<String> seqList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_join);
 
+        // LoginActivity 에서 넘긴 유저의 아이디값 받기
+        userID = getIntent().getStringExtra("userID");
 
-        jo_id = findViewById(R.id.jo_id);
-        jo_pass = findViewById(R.id.jo_pass);
-        jo_email = findViewById(R.id.jo_email);
-        jo_number = findViewById(R.id.jo_number);
+        // 컴포넌트 초기화
+        listView = findViewById(R.id.listView);
 
-
-        // 회원가입 버튼 클릭시 수행
-        jo_register = findViewById(R.id.jo_register);
-        jo_register.setOnClickListener(new View.OnClickListener() {
+        // listView 를 클릭시 이벤트
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onClick(View v) {
-                // EditText 에 현재 입력되어 있는 값을 get(가져온다) 해온다..
-                String idUser = jo_id.getText().toString();
-                String projectName = jo_pass.getText().toString();
-                String eMail = jo_email.getText().toString();
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-                int phoneNumber = Integer.parseInt(jo_number.getText().toString());
+                // 어떤 값을 선택했는지 토스트 전송
+                Toast.makeText(DashboardActivity.this, adapterView.getItemAtPosition(i)
+                                + "클릭", Toast.LENGTH_SHORT).show();
 
-
-
-
-                Response.Listener<String> responseListener = new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        try {
-                            JSONObject jsonObject = new JSONObject(response);
-                            boolean success = jsonObject.getBoolean("success");
-                            if (success) { // 회원등록에 성공한 경우
-
-                                // Json 객체로 담는다.
-//                                String idUser = jsonObject.getString("idUser");
-//                                String projectName = jsonObject.getString("projectName");
-//                                String eMail = jsonObject.getString("eMail");
-//                                String phoneNumber = jsonObject.getString("phoneNumber");
-
-                                Toast.makeText(getApplicationContext(), "회원 등록에 성공하였습니다.", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(DashboardActivity.this, Dashboardfinal.class);
+                // 게시물 번호와 userID를 가지고 DashboardFinal2 로 이동
+                Intent intent = new Intent(DashboardActivity.this, Dashboardfinal2.class);
+                intent.putExtra("board_seq", seqList.get(i));
+                intent.putExtra("userID", userID);
+                startActivity(intent);
+            }
+        });
 
 
+        // 버튼 컴포넌트 초기화
+        reg_button = findViewById(R.id.reg_button);
+        // 버튼 이벤트 추가
+        reg_button.setOnClickListener(new View.OnClickListener() {
 
-                                // putExtra
+            @Override
+            public void onClick(View view) {
 
-                                intent.putExtra( "idUser", idUser );
-                                intent.putExtra( "projectName", projectName );
-                                intent.putExtra( "eMail", eMail );
-                                intent.putExtra( "phoneNumber", phoneNumber );
+                // userID 를 가지고 DashboardFinal 로 이동
+                Intent intent = new Intent(DashboardActivity.this, Dashboardfinal.class);
+                intent.putExtra("userID", userID);
+                startActivity(intent);
+            }
+        });
+    }
 
-                                startActivity(intent);
-                            } else { // 회원등록에 실패한 경우
-                                Toast.makeText(getApplicationContext(), "회원 등록에 실패하였습니다,", Toast.LENGTH_SHORT).show();
-                                return;
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                            Toast.makeText(getApplicationContext(), "회원 등록에 실패하였습니다.(php 오류)", Toast.LENGTH_SHORT).show();
-                        }
+    // onResume() 은 해당 액티비티가 화면에 나타날때 호출
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // 해당 액티비티가 활성화 될때, 게시물 리스트 불러오는 함수 호출
+        GetBoard getBoard = new GetBoard();
+        getBoard.execute();
+    }
 
+    class GetBoard extends AsyncTask<String, Void, String> {
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            Log.d(TAG, "onPreExecute");
+        }
+        @Override
+        protected void onPostExecute(String result) {
+            super.onPostExecute(result);
+            Log.d(TAG, "onPostExecute" + result);
+
+            // 배열들 초기화
+            titlelist.clear();
+            seqList.clear();
+
+            try {
+                // 결과물이 JSONArray 형태로 넘어오므로 파싱
+                JSONArray jsonArray = new JSONArray(result);
+
+                for(int i=0; i<jsonArray.length(); i++) {
+                    JSONObject jsonObject = jsonArray.getJSONObject(i);
+
+                    String title = jsonObject.optString("title");
+                    String seq = jsonObject.optString("seq");
+
+                    // title, seq 값을 변수로 받아 배열에 추가
+                    titlelist.add(title);
+                    seqList.add(seq);
+                }
+
+                // ListView에서 사용할 arrayAdapter 생성후 ListView 와 연결
+                ArrayAdapter arrayAdapter = new ArrayAdapter<String>(DashboardActivity.this, android.R.layout.simple_list_item_1, titlelist);
+                listView.setAdapter(arrayAdapter);
+
+                // arrayAdapter의 데이터가 변경되었을때 새로고침
+                arrayAdapter.notifyDataSetChanged();
+
+            } catch(JSONException e) {
+                e.printStackTrace();
+            }
+        }
+
+        @Override
+        protected String doInBackground(String... params) {
+
+            String server_url = "http://su1318ho.dothome.co.kr/Register.php";
+            URL url;
+            String response = "";
+            try {
+                url = new URL(server_url);
+
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                conn.setReadTimeout(15000);
+                conn.setConnectTimeout(15000);
+                conn.setRequestMethod("POST");
+                conn.setDoInput(true);
+                conn.setDoOutput(true);
+                Uri.Builder builder = new Uri.Builder()
+                        .appendQueryParameter("userID", "");
+// .appendQueryParameter("passwd", passwd);
+                String query = builder.build().getEncodedQuery();
+
+                OutputStream os = conn.getOutputStream();
+                BufferedWriter writer = new BufferedWriter(
+                        new OutputStreamWriter(os, "UTF-8"));
+                writer.write(query);
+                writer.flush();
+                writer.close();
+                os.close();
+
+                conn.connect();
+                int responseCode=conn.getResponseCode();
+
+                if (responseCode == HttpsURLConnection.HTTP_OK) {
+                    String line;
+                    BufferedReader br=new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                    while ((line=br.readLine()) != null) {
+                        response+=line;
                     }
+                }
+                else {
+                    response="";
 
-                };
-                // 서버로 Volley를 이용해서 요청을 함.
-                DashboardRequest dashboardRequest = new DashboardRequest(idUser, projectName, eMail, phoneNumber, responseListener);
-                RequestQueue queue = Volley.newRequestQueue(DashboardActivity.this);
-                queue.add(dashboardRequest);
-
-
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
             }
 
+            return response;
+        }
 
-        });
     }
 }
