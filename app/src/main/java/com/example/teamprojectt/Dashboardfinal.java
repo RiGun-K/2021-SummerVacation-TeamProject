@@ -40,7 +40,7 @@ public class Dashboardfinal extends AppCompatActivity {
             setContentView(R.layout.activity_final);
 
 // ListActivity 에서 넘긴 userid 를 변수로 받음
-            userid = getIntent().getStringExtra("userID");
+            userid = getIntent().getStringExtra("userid");
 
 // 컴포넌트 초기화
             title_et = findViewById(R.id.title_et);
@@ -54,6 +54,9 @@ public class Dashboardfinal extends AppCompatActivity {
 // 게시물 등록 함수
                     RegBoard regBoard = new RegBoard();
                     regBoard.execute(userid, title_et.getText().toString(), content_et.getText().toString());
+
+                    Intent intent = new Intent(Dashboardfinal.this, Dashboardfinal2.class);
+                    startActivity(intent);
                 }
             });
 

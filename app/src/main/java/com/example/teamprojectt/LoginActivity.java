@@ -84,13 +84,16 @@ public class LoginActivity extends AppCompatActivity {
                                                                 String userID = jsonObject.getString("userID");
                                                                 String userPass = jsonObject.getString("userPassword");
 
+
                                                                 Toast toast = Toast.makeText(getApplicationContext(), et_id.getText()+" 님 환영합니다", Toast.LENGTH_LONG);
 //                                                                Toast.makeText(getApplicationContext(), et_id.getText()+" 님 환영합니다", Toast.LENGTH_LONG).show();
 //                                                                toast.setGravity(Gravity.BOTTOM, 0, 0);
                                                                 toast.show();
 
 
+
                                                                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+
                                                                 intent.putExtra("userID", userID);
                                                                 intent.putExtra("userPass", userPass);
                                                                 startActivity(intent);

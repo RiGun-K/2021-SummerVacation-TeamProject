@@ -37,6 +37,7 @@
         <activity android:name=".HomeActivity2" />
         <activity android:name=".DashboardActivity" />
         <activity android:name=".Dashboardfinal" />
+        <activity android:name=".Dashboardfinal2" />
         <activity android:name=".IngActivity" />
         <activity android:name=".CompletedActivity" />
         <activity android:name="SnsActivity" />

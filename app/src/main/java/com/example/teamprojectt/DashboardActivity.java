@@ -43,7 +43,7 @@ public class DashboardActivity extends AppCompatActivity {
     ListView listView;
     Button reg_button;
     //    String et_id = "";
-    String userID = "";
+    String userid = "";
 
     // 리스트뷰 에 사용할 제목 배열
     ArrayList<String> titlelist = new ArrayList<>();
@@ -56,7 +56,7 @@ public class DashboardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_join);
 
         // LoginActivity 에서 넘긴 유저의 아이디값 받기
-        userID = getIntent().getStringExtra("userID");
+        userid = getIntent().getStringExtra("userid");
 
         // 컴포넌트 초기화
         listView = findViewById(R.id.listView);
@@ -73,7 +73,7 @@ public class DashboardActivity extends AppCompatActivity {
                 // 게시물 번호와 userID를 가지고 DashboardFinal2 로 이동
                 Intent intent = new Intent(DashboardActivity.this, Dashboardfinal2.class);
                 intent.putExtra("board_seq", seqList.get(i));
-                intent.putExtra("userID", userID);
+                intent.putExtra("userid", userid);
                 startActivity(intent);
             }
         });
@@ -89,7 +89,7 @@ public class DashboardActivity extends AppCompatActivity {
 
                 // userID 를 가지고 DashboardFinal 로 이동
                 Intent intent = new Intent(DashboardActivity.this, Dashboardfinal.class);
-                intent.putExtra("userID", userID);
+                intent.putExtra("userid", userid);
                 startActivity(intent);
             }
         });
@@ -163,7 +163,7 @@ public class DashboardActivity extends AppCompatActivity {
                 conn.setDoInput(true);
                 conn.setDoOutput(true);
                 Uri.Builder builder = new Uri.Builder()
-                        .appendQueryParameter("userID", "");
+                        .appendQueryParameter("userid", "");
 // .appendQueryParameter("passwd", passwd);
                 String query = builder.build().getEncodedQuery();
 
