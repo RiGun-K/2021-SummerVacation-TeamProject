@@ -25,7 +25,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         TextView tv_error_email;
         private EditText et_id, et_pass, et_name, et_hakbun, et_email;
-        private Button btn_register,validateButton;
+        private Button btn_register , validateButton , et_photo;
         private boolean validate = false;       // 사용할 수 있는 아이디 인지 체크
 
         @Override
@@ -40,6 +40,7 @@ public class RegisterActivity extends AppCompatActivity {
             et_pass = findViewById(R.id.et_pass);
             et_name = findViewById(R.id.et_name);
             et_hakbun = findViewById(R.id.et_hakbun);
+            et_photo = findViewById(R.id.et_photo);
 
             /////////////////////// 중복 체크  하다 말앗음 php 없어서
             final Button validateButton = (Button) findViewById(R.id.validateButton);
@@ -103,6 +104,7 @@ public class RegisterActivity extends AppCompatActivity {
 
 
 ////////////////////////////////////
+
 
             et_email=findViewById(R.id.et_email);
             tv_error_email=findViewById(R.id.tv_error_email);
