@@ -5,103 +5,172 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:passwordToggleEnabled="true"
-    tools:context=".LoginActivity"
-    android:background="@color/rabender">
+    tools:context=".LoginActivity">
 
-
-
-    // 첫 화면 ( 로그인 )
-    <ImageView
-        android:id="@+id/et_logo"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="270dp"
-        android:layout_margin="20dp"
-        android:foregroundGravity="center"
-        android:src="@drawable/logo_transparent"
-        tools:ignore="MissingConstraints" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:paddingTop="0dp"
+
+        >
+        // 첫 화면 ( 로그인 )
+        <ImageView
+            android:id="@+id/et_logo"
+            android:layout_width="match_parent"
+            android:layout_height="270dp"
+            android:layout_margin="20dp"
+            android:foregroundGravity="center"
+            android:src="@drawable/logo_transparent"
+            tools:ignore="MissingConstraints" />
 
 
-    <TextView
-        android:id="@+id/et_jin"
-        android:layout_width="394dp"
-        android:layout_height="41dp"
-        android:gravity="center"
-        android:text="WeGo"
-        android:textColor="@color/black"
-        android:textSize="25dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/et_logo"
-        app:layout_constraintStart_toStartOf="@+id/et_logo"
-        app:layout_constraintTop_toBottomOf="@+id/et_logo"
-        tools:ignore="MissingConstraints" />
+        <TextView
+            android:id="@+id/et_jin"
+            android:layout_width="394dp"
+            android:layout_height="41dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Login"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:layout_marginBottom="15dp"
+            tools:ignore="MissingConstraints" />
 
-    <EditText
-        android:id="@+id/et_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="332dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:ems="10"
-        android:hint="아이디"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <!--    <EditText-->
+        <!--        android:id="@+id/et_id"-->
+        <!--        android:layout_width="match_parent"-->
+        <!--        android:layout_height="50dp"-->
+        <!--        android:ems="10"-->
+        <!--        android:background="@drawable/edit_text"-->
+        <!--        android:drawableStart="@drawable/custom_edit_text"-->
+        <!--        android:drawablePadding="12dp"-->
+        <!--        android:paddingStart="10dp"-->
+        <!--        android:paddingEnd="10dp"-->
+        <!--        android:hint="ID"-->
+        <!--        android:inputType="textEmailAddress"-->
+        <!--        android:textSize="14dp"-->
+        <!--        android:drawableLeft="@drawable/icon_people"-->
+        <!--        android:layout_marginBottom="5dp"-->
+        <!--        />-->
 
-    <EditText
-        android:id="@+id/et_pass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:ems="10"
-        android:hint="비밀번호"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="@+id/et_id"
-        app:layout_constraintHorizontal_bias="0.562"
-        app:layout_constraintStart_toStartOf="@+id/et_id"
-        app:layout_constraintTop_toBottomOf="@+id/et_id" />
+        <!--    <EditText-->
+        <!--        android:id="@+id/et_pass"-->
+        <!--        android:layout_width="match_parent"-->
+        <!--        android:layout_height="50dp"-->
+        <!--        android:ems="10"-->
+        <!--        android:drawableStart="@drawable/custom_edit_text_key"-->
+        <!--        android:background="@drawable/edit_text"-->
+        <!--        android:drawablePadding="12dp"-->
+        <!--        android:drawableLeft="@drawable/icon_key"-->
+        <!--        android:paddingEnd="10dp"-->
+        <!--        android:paddingStart="10dp"-->
+        <!--        android:hint="PassWord"-->
+        <!--        android:inputType="textEmailAddress"-->
+        <!--        android:textSize="14dp"-->
+        <!--        />-->
 
-    <Button
-        android:id="@+id/btn_login"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="로그인"
-        app:backgroundTint="#6799FF"
-        app:layout_constraintEnd_toEndOf="@+id/et_pass"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/et_pass"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:id="@+id/textInputLayout"
+            android:layout_width="310dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="32dp"
+            android:layout_gravity="center"
+            android:hint="Name"
+            app:endIconMode="clear_text"
+            app:helperTextTextColor="@color/main_color"
+            app:boxBackgroundColor="@color/white"
+            app:startIconDrawable="@drawable/icon_people"
+            android:layout_marginRight="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-    <Button
-        android:id="@+id/btn_register"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="회원가입"
-        app:backgroundTint="#6799FF"
-        app:layout_constraintEnd_toEndOf="@+id/btn_login"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/btn_login"
-        app:layout_constraintTop_toBottomOf="@+id/btn_login" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_id"
+                android:maxLength="20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <CheckBox
-        android:id="@+id/checkBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="비밀번호 표시"
-        app:layout_constraintEnd_toEndOf="@+id/et_pass"
-        app:layout_constraintStart_toStartOf="@+id/et_pass"
-        app:layout_constraintTop_toBottomOf="@+id/et_pass" />
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:id="@+id/textInputLayout2"
+            android:layout_width="310dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+
+            android:layout_marginEnd="32dp"
+            android:layout_gravity="center"
+            android:hint="PassWord"
+            app:endIconMode="password_toggle"
+            app:helperTextTextColor="@color/main_color"
+            app:boxBackgroundColor="@color/white"
+            app:startIconDrawable="@drawable/icon_key"
+            android:layout_marginRight="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_pass"
+                android:maxLength="20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="비밀번호 표시"
+            app:layout_constraintEnd_toEndOf="@+id/et_pass"
+            app:layout_constraintStart_toStartOf="@+id/et_pass"
+            app:layout_constraintTop_toBottomOf="@+id/et_pass" />
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button_background"
+            android:text="Login"
+            android:textColor="@color/black"
+            android:layout_marginBottom="10dp"
+            app:backgroundTint="@null"
+            app:layout_constraintEnd_toEndOf="@+id/et_pass"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="@+id/et_pass"
+            app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/button_background"
+            android:text="Register NOw!"
+            android:textColor="@color/black"
+            app:backgroundTint="@null"
+            app:layout_constraintEnd_toEndOf="@+id/btn_login"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/btn_login"
+            app:layout_constraintTop_toBottomOf="@+id/btn_login" />
 
 
 
+
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

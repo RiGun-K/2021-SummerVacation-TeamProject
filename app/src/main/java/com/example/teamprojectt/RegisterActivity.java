@@ -40,7 +40,7 @@ public class RegisterActivity extends AppCompatActivity {
             et_pass = findViewById(R.id.et_pass);
             et_name = findViewById(R.id.et_name);
             et_hakbun = findViewById(R.id.et_hakbun);
-            et_photo = findViewById(R.id.et_photo);
+//            et_photo = findViewById(R.id.et_photo);
 
             /////////////////////// 중복 체크  하다 말앗음 php 없어서
             final Button validateButton = (Button) findViewById(R.id.validateButton);

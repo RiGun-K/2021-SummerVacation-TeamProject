@@ -45,7 +45,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Name"
+                android:hint="성함을 입력하세요"
                 android:inputType="textPersonName"
                 app:layout_constraintEnd_toEndOf="@+id/et_pass"
                 app:layout_constraintStart_toStartOf="@+id/et_pass"
