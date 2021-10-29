@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.annotation.NonNull;
@@ -15,7 +16,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class SnsFragment extends Fragment {
 
-    private EditText et_sns;
+    private Button et_sns;
 
     @Nullable
     @org.jetbrains.annotations.Nullable
