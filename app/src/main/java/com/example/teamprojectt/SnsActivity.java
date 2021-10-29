@@ -26,7 +26,7 @@ import java.util.Date;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 import de.hdodenhof.circleimageview.CircleImageView;
-public class SnsActivity extends AppCompatActivity {
+public class  SnsActivity extends AppCompatActivity {
 
     EditText etName;
     CircleImageView ivProfile;
@@ -46,15 +46,17 @@ public class SnsActivity extends AppCompatActivity {
         ivProfile = findViewById(R.id.iv_profile);
 
         //폰에 저장되어 있는 프로필 읽어오기
-        loadData();
-        if(G.nickName!=null){
-            etName.setText(G.nickName);
-            Picasso.get().load(G.porfileUrl).into(ivProfile);
 
-            //처음이 아니다, 즉, 이미 접속한 적이 있다.
-            isFirst=false;
-
-        }
+        // 이미 닉네임이 있으면 그 닉네임으로 입장 ( 변경불가 )
+//        loadData();
+//        if(G.nickName!=null){
+//            etName.setText(G.nickName);
+//            Picasso.get().load(G.porfileUrl).into(ivProfile);
+//
+//            //처음이 아니다, 즉, 이미 접속한 적이 있다.
+//            isFirst=false;
+//
+//        }
 
     }
 
