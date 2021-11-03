@@ -58,7 +58,7 @@ public class HomeActivity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mypage2);
 
-        mTextViewResult = (TextView)findViewById(R.id.textView_main_result);
+
         mlistView = (ListView)findViewById(R.id.listView_main_list);
         mArrayList = new ArrayList<>();
 
@@ -81,24 +81,6 @@ public class HomeActivity2 extends AppCompatActivity {
                     "Please Wait", null, true, true);
         }
 
-
-        @Override
-        protected void onPostExecute(String result) {
-            super.onPostExecute(result);
-
-            progressDialog.dismiss();
-            mTextViewResult.setText(result);
-            Log.d(TAG, "response  - " + result);
-
-            if (result == null) {
-
-                mTextViewResult.setText(errorString);
-            } else {
-
-                mJsonString = result;
-                showResult();
-            }
-        }
 
         @Override
         protected String doInBackground(String... params) {
