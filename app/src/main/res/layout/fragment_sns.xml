@@ -53,20 +53,20 @@
                 android:textSize="20dp"
                 android:textColor="@color/black"
                 android:textStyle="bold" />
+
             <Button
                 android:id="@+id/et_sns"
                 android:layout_width="300dp"
                 android:layout_height="70dp"
-                android:gravity="center"
                 android:layout_gravity="center"
                 android:layout_marginTop="30dp"
-                app:backgroundTint="@null"
                 android:background="@drawable/btn_darkblue"
+                android:gravity="center"
                 android:text="채팅 시작하기"
                 android:textColor="#FFFFFF"
                 android:textSize="18dp"
                 android:textStyle="bold"
-                />
+                app:backgroundTint="@null" />
 
 
         </LinearLayout>

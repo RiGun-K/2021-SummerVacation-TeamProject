@@ -1,104 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-
-    <TextView
-        android:id="@+id/title"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:gravity="center"
-        android:text=" 환영합니다 ㅇㅇㅇ님 ! "
-        android:textColor="@color/logo"
-        android:textSize="20dp" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingTop="40dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        >
 
-        <TextView
-        android:id="@+id/tv_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textSize="30dp"
-        android:gravity="center"
-        tools:layout_editor_absoluteX="123dp"
-        tools:layout_editor_absoluteY="99dp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="250dp"
+            android:layout_gravity="top"
+            android:orientation="horizontal">
 
 
-    <EditText
-        android:id="@+id/et_id3"
-        android:layout_width="210dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="200dp"
-        android:layout_marginEnd="8dp"
-        android:ems="10"
-        android:hint="이름"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <ImageView
+                android:id="@+id/MainButton2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:src="@drawable/logo_transparent" />
 
 
+        </LinearLayout>
 
-    <EditText
-        android:id="@+id/et_pass3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="스펙설명"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="@+id/et_id3"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/et_id3"
-        app:layout_constraintTop_toBottomOf="@+id/et_id3" />
-
-    <Button
-        android:id="@+id/mylist"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:textColor="#ffffff"
-        android:textSize="15dp"
-        android:textStyle="bold"
-        app:backgroundTint="#6799FF"
-        android:text="나의 프로젝트 리스트"
-        app:layout_constraintEnd_toEndOf="@+id/et_pass3"
-        app:layout_constraintStart_toStartOf="@+id/et_pass3"
-        app:layout_constraintTop_toBottomOf="@+id/et_pass3" />
-
-    <CheckBox
-        android:id="@+id/checkBox"
-        android:text="남이 보게 할건가?"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="전화번호"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/mylist"
-        app:layout_constraintStart_toStartOf="@+id/mylist"
-        app:layout_constraintTop_toBottomOf="@+id/mylist"
-        />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp">
 
 
-    <Button
-        android:id="@+id/btn_edit"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="116dp"
-        android:text="수정 및 저장"
-        app:backgroundTint="#6799FF"
-        app:layout_constraintEnd_toEndOf="@+id/checkBox"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/checkBox"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="메인화면"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/mylist"
+                android:layout_width="300dp"
+                android:layout_height="70dp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                app:backgroundTint="@null"
+                android:background="@drawable/btn_darkblue"
+                android:text="프로젝트 리스트"
+                android:textColor="#FFFFFF"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
 
+    </LinearLayout>
+
+</LinearLayout>
 

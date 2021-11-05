@@ -49,8 +49,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:text="새로운 사람들과 다양한 프로젝트를
-                              만들어 보세요!"
+                android:text="새로운 사람들과 게시판을 만들어보세요!"
                 android:textSize="20dp"
                 android:textColor="@color/black"
                 android:textStyle="bold" />
@@ -63,7 +62,7 @@
                 android:layout_marginTop="30dp"
                 app:backgroundTint="@null"
                 android:background="@drawable/btn_darkblue"
-                android:text="프로젝트 시작하기"
+                android:text="글쓰기"
                 android:textColor="#FFFFFF"
                 android:textSize="18dp"
                 android:textStyle="bold"

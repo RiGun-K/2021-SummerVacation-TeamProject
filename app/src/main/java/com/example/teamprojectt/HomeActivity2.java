@@ -83,6 +83,24 @@ public class HomeActivity2 extends AppCompatActivity {
 
 
         @Override
+        protected void onPostExecute(String result) {
+            super.onPostExecute(result);
+
+            progressDialog.dismiss();
+
+            Log.d(TAG, "response  - " + result);
+
+            if (result == null) {
+
+                mTextViewResult.setText(errorString);
+            } else {
+
+                mJsonString = result;
+                showResult();
+            }
+        }
+
+        @Override
         protected String doInBackground(String... params) {
 
             String serverURL = params[0];
