@@ -2,40 +2,40 @@ package com.example.teamprojectt;
 
 public class PersonalData {
 
-    private String member_idUser;
-    private String member_projectName;
-    private String member_eMail;
-    private String member_phoneNumber;
+    private String member_userID;
+    private String member_userPassword;
+    private String member_userName;
+    private String member_userHakbun;
 
-    public String getMember_idUser() {
-        return member_idUser;
+    public void setMember_userID(String member_userID) {
+        this.member_userID = member_userID;
     }
 
-    public String getMember_projectName() {
-        return member_projectName;
+    public void setMember_userPassword(String member_userPassword) {
+        this.member_userPassword = member_userPassword;
     }
 
-    public String getMember_eMail() {
-        return member_eMail;
+    public void setMember_userName(String member_userName) {
+        this.member_userName = member_userName;
     }
 
-    public String getMember_phoneNumber() {
-        return member_phoneNumber;
+    public void setMember_userHakbun(String member_userHakbun) {
+        this.member_userHakbun = member_userHakbun;
     }
 
-    public void setMember_idUser(String member_idUser) {
-        this.member_idUser = member_idUser;
+    public String getMember_userID() {
+        return member_userID;
     }
 
-    public void setMember_projectName(String member_projectName) {
-        this.member_projectName = member_projectName;
+    public String getMember_userPassword() {
+        return member_userPassword;
     }
 
-    public void setMember_eMail(String member_eMail) {
-        this.member_eMail = member_eMail;
+    public String getMember_userName() {
+        return member_userName;
     }
 
-    public void setMember_phoneNumber(String member_phoneNumber) {
-        this.member_phoneNumber = member_phoneNumber;
+    public String getMember_userHakbun() {
+        return member_userHakbun;
     }
 }

@@ -17,12 +17,13 @@ public class MainFragment extends AppCompatActivity {
         setContentView(R.layout.fragment_home);
 
 
-        tv_id = findViewById(R.id.tv_id);
-
-        Intent intent = getIntent();
-        String userID = intent.getStringExtra("userID");
-
-        tv_id.setText(userID);
+//        시작하면 userID 값 받아와서 텍스트로 띄우는 코드 ( 필요없는 관계로 우선 주석처리 )
+//        tv_id = findViewById(R.id.tv_id);
+//
+//        Intent intent = getIntent();
+//        String userID = intent.getStringExtra("userID");
+//
+//        tv_id.setText(userID);
 
     }
 }

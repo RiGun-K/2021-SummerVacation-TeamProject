@@ -37,10 +37,10 @@ public class HomeActivity2 extends AppCompatActivity {
     private static String TAG = "phptest_HomeActivity2";
 
     private static final String TAG_JSON = "webnautes";
-    private static final String TAG_IDUSER = "idUser";
-    private static final String TAG_PROJECTNAME = "projectName";
-    private static final String TAG_EMAIL = "eMail";
-    private static final String TAG_PHONENUMBER = "phoneNumber";
+    private static final String TAG_USERID = "userID";
+    private static final String TAG_USERPASSWORD = "userPassword";
+    private static final String TAG_USERNAME = "userName";
+    private static final String TAG_USERHAKBUN = "userHakbun";
 
 
     private TextView mTextViewResult;
@@ -174,18 +174,18 @@ public class HomeActivity2 extends AppCompatActivity {
 
                 JSONObject item = jsonArray.getJSONObject(i);
 
-                String idUser = item.getString(TAG_IDUSER);
-                String projectName = item.getString(TAG_PROJECTNAME);
-                String eMail = item.getString(TAG_EMAIL);
+                String userID = item.getString(TAG_USERID);
+                String userPassword = item.getString(TAG_USERPASSWORD);
+                String userName = item.getString(TAG_USERNAME);
 
-                String phoneNumber = item.getString(TAG_PHONENUMBER);
+                String userHakbun = item.getString(TAG_USERHAKBUN);
 
                 HashMap<String,String> hashMap = new HashMap<>();
 
-                hashMap.put(TAG_IDUSER, idUser);
-                hashMap.put(TAG_PROJECTNAME, projectName);
-                hashMap.put(TAG_EMAIL, eMail);
-                hashMap.put(TAG_PHONENUMBER, phoneNumber);
+                hashMap.put(TAG_USERID, userID);
+                hashMap.put(TAG_USERPASSWORD, userPassword);
+                hashMap.put(TAG_USERNAME, userName);
+                hashMap.put(TAG_USERHAKBUN, userHakbun);
 
                 mArrayList.add(hashMap);
 
@@ -196,9 +196,9 @@ public class HomeActivity2 extends AppCompatActivity {
 
             ListAdapter adapter = new SimpleAdapter(
                     HomeActivity2.this, mArrayList, R.layout.mypage2_list,
-                    new String[]{TAG_IDUSER, TAG_PROJECTNAME, TAG_EMAIL, TAG_PHONENUMBER},
-                    new int[]{R.id.textView_list_idUser, R.id.textView_list_projectName,
-                              R.id.textView_list_eMail, R.id.textView_list_phoneNumber }
+                    new String[]{TAG_USERID, TAG_USERPASSWORD, TAG_USERNAME, TAG_USERHAKBUN},
+                    new int[]{R.id.textView_list_userID, R.id.textView_list_userPassword,
+                              R.id.textView_list_userName, R.id.textView_list_userHakbun }
             );
 
             mlistView.setAdapter(adapter);

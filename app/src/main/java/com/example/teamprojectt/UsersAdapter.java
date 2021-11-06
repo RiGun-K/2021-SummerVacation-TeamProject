@@ -25,17 +25,17 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.CustomViewHo
     }
 
     class CustomViewHolder extends RecyclerView.ViewHolder {
-        protected TextView idUser;
-        protected TextView projectName;
-        protected TextView eMail;
-        protected TextView phoneNumber;
+        protected TextView userID;
+        protected TextView userPassword;
+        protected TextView userName;
+        protected TextView userHakbun;
 
         public CustomViewHolder(View view) {
             super(view);
-            this.idUser = (TextView) view.findViewById(R.id.textView_list_idUser);
-            this.projectName = (TextView) view.findViewById(R.id.textView_list_projectName);
-            this.eMail = (TextView) view.findViewById(R.id.textView_list_eMail);
-            this.phoneNumber = (TextView) view.findViewById(R.id.textView_list_phoneNumber);
+            this.userID = (TextView) view.findViewById(R.id.textView_list_userID);
+            this.userPassword = (TextView) view.findViewById(R.id.textView_list_userPassword);
+            this.userName = (TextView) view.findViewById(R.id.textView_list_userName);
+            this.userHakbun = (TextView) view.findViewById(R.id.textView_list_userHakbun);
 
         }
     }
@@ -52,10 +52,10 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.CustomViewHo
     @Override
     public void onBindViewHolder(@NonNull CustomViewHolder viewholder, int position) {
 
-        viewholder.idUser.setText(mList.get(position).getMember_idUser());
-        viewholder.projectName.setText(mList.get(position).getMember_projectName());
-        viewholder.eMail.setText(mList.get(position).getMember_eMail());
-        viewholder.phoneNumber.setText(mList.get(position).getMember_phoneNumber());
+        viewholder.userID.setText(mList.get(position).getMember_userID());
+        viewholder.userPassword.setText(mList.get(position).getMember_userPassword());
+        viewholder.userName.setText(mList.get(position).getMember_userName());
+        viewholder.userHakbun.setText(mList.get(position).getMember_userHakbun());
     }
 
     @Override
