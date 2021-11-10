@@ -16,7 +16,7 @@ import org.jetbrains.annotations.NotNull;
 public class DashboardFragment extends Fragment {
 
     private View view;
-    private Button MainButton, MainButton2;
+    private Button MainButton, MainButton2, MainButton3;
 
 
     // Ctrl + o
@@ -30,7 +30,8 @@ public class DashboardFragment extends Fragment {
         // Dashboard layout 과 연결
 
         MainButton = view.findViewById(R.id.MainButton);
-        MainButton2 = view.findViewById(R.id.MainButton2);;
+        MainButton2 = view.findViewById(R.id.MainButton2);
+        MainButton3 = view.findViewById(R.id.MainButton3);
         // 해당 xml 안에 있는 Button 객체 생성
 
         MainButton.setOnClickListener(new View.OnClickListener() {
