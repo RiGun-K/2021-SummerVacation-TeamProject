@@ -53,6 +53,7 @@
                 android:textSize="20dp"
                 android:textColor="@color/black"
                 android:textStyle="bold" />
+
             <Button
                 android:id="@+id/mylist"
                 android:layout_width="300dp"
@@ -68,6 +69,20 @@
                 android:textStyle="bold"
                 />
 
+            <Button
+                android:id="@+id/btn_edit"
+                android:layout_width="300dp"
+                android:layout_height="70dp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                app:backgroundTint="@null"
+                android:background="@drawable/btn_darkblue"
+                android:text="홈액티비티이동"
+                android:textColor="#FFFFFF"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                />
 
         </LinearLayout>
 

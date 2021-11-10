@@ -24,7 +24,7 @@
 
     // 유저 아이디
     <TextView
-        android:id="@+id/textView_list_idUser"
+        android:id="@+id/textView_list_userID"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="4"
@@ -33,7 +33,7 @@
 
     // 프로젝트 이름
     <TextView
-        android:id="@+id/textView_list_projectName"
+        android:id="@+id/textView_list_userPassword"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="5"
@@ -42,7 +42,7 @@
 
     // 이메일
     <TextView
-        android:id="@+id/textView_list_eMail"
+        android:id="@+id/textView_list_userName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="5"
@@ -51,7 +51,7 @@
 
     // 폰번호
     <TextView
-        android:id="@+id/textView_list_phoneNumber"
+        android:id="@+id/textView_list_userHakbun"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="5"
