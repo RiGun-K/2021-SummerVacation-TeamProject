@@ -51,6 +51,14 @@ public class DashboardFragment extends Fragment {
             }
         });
 
+        MainButton3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), TeamJoinActivity.class);
+                startActivity(intent);
+            }
+        });
+
         return view;
     }
 }
