@@ -11,6 +11,82 @@
     // Recycler View 에는 DB에서 가져온 JSON 형식의 데이터를
     // 파싱해서 항목별로 표시
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:id="@+id/textView_list_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:padding="5dp"
+            android:text="순서"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            />
+
+
+        // 유저 아이디
+
+        <TextView
+            android:id="@+id/textView_list_pjName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="4"
+            android:padding="7dp"
+            android:text="이름"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+
+        // 프로젝트 이름
+
+        <TextView
+            android:id="@+id/textView_list_pjContent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="3"
+            android:padding="5dp"
+            android:text="내용"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+
+        // 이메일
+
+        <TextView
+            android:id="@+id/textView_list_pjEffect"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="5"
+            android:padding="7dp"
+            android:text="기대효과"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        // 폰번호
+
+        <TextView
+            android:id="@+id/textView_list_pjCount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="4"
+            android:padding="7dp"
+            android:text="인원"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
     <ListView
         android:layout_width="match_parent"
         android:layout_height="0dp"
