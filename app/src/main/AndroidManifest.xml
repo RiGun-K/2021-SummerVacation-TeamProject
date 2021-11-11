@@ -40,6 +40,7 @@
         <activity android:name=".Dashboardfinal2" />
         <activity android:name=".IngActivity" />
         <activity android:name=".CompletedActivity" />
+        <activity android:name=".UserActivity"/>
         <activity android:name=".TeamJoinActivity"/>
         <activity android:name="SnsActivity" />
         <activity android:name=".ChatActivity" />
