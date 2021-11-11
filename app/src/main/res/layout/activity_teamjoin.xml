@@ -35,60 +35,23 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="2dp"
-                android:text="이름"
+                android:text="프로젝트명"
                 android:textColor="@color/black"
                 android:textStyle="bold" />
 
-            <!-- 여기 이름 입력-->
+            <!-- 여기 프로젝트명 입력-->
             <EditText
-                android:id="@+id/et_name"
+                android:id="@+id/pj_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="성함을 입력하세요"
+                android:hint="프로젝트명 을 입력하세요"
                 android:inputType="textPersonName"
                 app:layout_constraintEnd_toEndOf="@+id/et_pass"
                 app:layout_constraintStart_toStartOf="@+id/et_pass"
                 app:layout_constraintTop_toBottomOf="@+id/et_pass" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="2dp"
-                android:layout_marginTop="13dp"
-                android:text="아이디"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp">
-
-                <!-- 여기 ID 입력-->
-                <EditText
-                    android:id="@+id/et_id"
-                    android:layout_width="230dp"
-                    android:layout_height="44dp"
-                    android:ems="10"
-                    android:hint="ID"
-                    android:inputType="textPersonName"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <Button
-                    android:id="@+id/validateButton"
-                    android:layout_width="90dp"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="0dp"
-                    android:background="@drawable/btn_singup"
-                    android:text="중복 체크"
-                    android:textColor="@color/black"
-                    android:textSize="12dp"
-                    android:textStyle="bold"
-                    app:backgroundTint="@null" />
-            </LinearLayout>
 
             <TextView
                 android:layout_width="match_parent"
@@ -96,18 +59,18 @@
                 android:layout_gravity="center"
                 android:layout_marginLeft="2dp"
                 android:layout_marginTop="13dp"
-                android:text="비밀번호"
+                android:text="프로젝트 인원수"
                 android:textColor="@color/black"
                 android:textStyle="bold" />
 
-            <!-- 여기 비밀번호 입력-->
+            <!-- 여기 인원수 입력-->
             <EditText
-                android:id="@+id/et_pass"
+                android:id="@+id/pj_count"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="PassWord"
-                android:inputType="textPassword"
+                android:hint=""
+                android:inputType="textPersonName"
                 app:layout_constraintEnd_toEndOf="@+id/et_id"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/et_id"
@@ -119,18 +82,19 @@
                 android:layout_gravity="center"
                 android:layout_marginLeft="2dp"
                 android:layout_marginTop="13dp"
-                android:text="비밀번호 재확인"
+                android:text="프로젝트 내용"
                 android:textColor="@color/black"
                 android:textStyle="bold" />
 
-            <!-- 여기 비밀번호 재확인 입력-->
+            <!-- 여기 프로젝트 내용 입력-->
             <EditText
-                android:id="@+id/et_passcheck"
+                android:id="@+id/pj_content"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="130dp"
                 android:ems="10"
-                android:hint="PassWord"
-                android:inputType="textPassword"
+                android:hint=""
+                android:inputType="textWebEditText"
+                android:lines="5"
                 app:layout_constraintEnd_toEndOf="@+id/et_id"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/et_id"
@@ -142,99 +106,31 @@
                 android:layout_gravity="center"
                 android:layout_marginLeft="2dp"
                 android:layout_marginTop="13dp"
-                android:text="휴대전화(-빼고 입력)"
+                android:text="기대효과"
                 android:textColor="@color/black"
                 android:textStyle="bold" />
 
-            <!-- 여기 전화번호 입력-->
+            <!-- 여기 기대효과 입력-->
             <EditText
-                android:id="@+id/et_hakbun"
+                android:id="@+id/pj_effect"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="147dp"
                 android:ems="10"
-                android:hint="TEL"
-                android:inputType="textPersonName"
+                android:hint=""
+                android:inputType="textWebEditText"
+                android:lines="5"
                 app:layout_constraintEnd_toEndOf="@+id/et_name"
                 app:layout_constraintStart_toStartOf="@+id/et_name"
                 app:layout_constraintTop_toBottomOf="@+id/et_name" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="2dp"
-                android:layout_marginTop="13dp"
-                android:text="본인확인 이메일"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
-
-            <!-- 여기 이메일 입력-->
-            <EditText
-                android:id="@+id/et_email"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="E-Mail"
-                android:inputType="textPersonName"
-                app:layout_constraintEnd_toEndOf="@+id/et_name"
-                app:layout_constraintStart_toStartOf="@+id/et_name"
-                app:layout_constraintTop_toBottomOf="@+id/et_name" />
-
-            <TextView
-                android:id="@+id/tv_error_email"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#FF0000"
-                app:layout_constraintStart_toStartOf="@id/et_email"
-                app:layout_constraintTop_toBottomOf="@+id/et_email"
-                app:layout_constraintEnd_toEndOf="@+id/et_email"
-                tools:text="테스트 " />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="2dp"
-                android:layout_marginTop="13dp"
-                android:text="생년월일"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:orientation="horizontal">
-                <!--여기에 생년월일 -->
-                <EditText
-                    android:id="@+id/et_birth"
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
-                    android:ems="10"
-                    android:hint="Years"
-                    android:inputType="textPersonName"
-                    />
-                <Spinner
-                    android:id="@+id/spinner_month"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:entries="@array/Singup_month"
-                    android:layout_marginLeft="100dp"/>
-
-                <Spinner
-                    android:id="@+id/spinner_day"
-                    android:entries="@array/Singup_days"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="210dp"/>
-            </RelativeLayout>
 
 
             <Button
-                android:id="@+id/btn_register"
+                android:id="@+id/pj_register"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/button_background"
-                android:text="We Go 시작하기"
+                android:text="프로젝트 시작하기"
                 android:textSize="17dp"
                 app:backgroundTint="@null"
                 app:layout_constraintEnd_toEndOf="@+id/et_hakbun"
