@@ -63,7 +63,7 @@
                 android:layout_marginTop="30dp"
                 app:backgroundTint="@null"
                 android:background="@drawable/btn_darkblue"
-                android:text="내정보 수정/삭제"
+                android:text="내 프로젝트"
                 android:textColor="#FFFFFF"
                 android:textSize="18dp"
                 android:textStyle="bold"
