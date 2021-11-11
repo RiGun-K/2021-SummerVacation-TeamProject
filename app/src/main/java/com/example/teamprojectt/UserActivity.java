@@ -24,7 +24,7 @@ public class UserActivity extends AppCompatActivity {
             String name = intent.getStringExtra("name");
             String phone = intent.getStringExtra("phone");
             String country = intent.getStringExtra("country");
-            int imageid = intent.getIntExtra("imageid",R.drawable.people1);
+            int imageid = intent.getIntExtra("imageid", R.drawable.people1);
 
             binding.nameProfile.setText(name);
             binding.phoneProfile.setText(phone);

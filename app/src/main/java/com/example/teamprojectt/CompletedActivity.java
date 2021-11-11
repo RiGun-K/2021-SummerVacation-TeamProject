@@ -3,11 +3,6 @@ package com.example.teamprojectt;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.AdapterView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,7 +10,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.teamprojectt.databinding.ActivityListcompleteBinding;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class CompletedActivity extends AppCompatActivity {
 
@@ -31,7 +25,7 @@ public class CompletedActivity extends AppCompatActivity {
 
 
         //DB가 없으므로 일단 대충 알잘딱으로 때려넣겠읍니당
-        int[] imageId = {R.drawable.people1,R.drawable.people2,R.drawable.people3};
+        int[] imageId = {R.drawable.people4,R.drawable.people2,R.drawable.people3};
         String[] name = {"LeeHyounHo","Kimminsu","Parkjihye"};
         String[] lastMessage = {"Hey How are you", "I'm fine", "What ssap"};
         String[] lastmsgTime = {"8:45 am","11:12 am","18:05 pm"};

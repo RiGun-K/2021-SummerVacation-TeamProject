@@ -14,24 +14,36 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:paddingLeft="10dp"
-        android:paddingTop="40dp"
+        android:paddingTop="10dp"
         android:paddingRight="10dp"
         android:paddingBottom="10dp"
         >
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="250dp"
-            android:layout_gravity="top"
-            android:orientation="horizontal">
-
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
 
             <ImageView
-                android:id="@+id/images"
+                android:id="@+id/icon3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/checklistblack"
+                android:layout_gravity="center"/>
+
+            <Button
+                android:id="@+id/MainButton3"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="70dp"
                 android:gravity="center"
-                android:src="@drawable/logo_transparent" />
+                android:textColor="@color/black"
+                android:layout_gravity="center"
+                android:textSize="18dp"
+                android:background="@drawable/btn_singup"
+                app:backgroundTint="@null"
+                android:text=" 프로젝트 생성하기 " />
 
 
         </LinearLayout>
@@ -39,66 +51,56 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:paddingLeft="10dp"
-            android:paddingTop="10dp"
-            android:paddingRight="10dp"
-            android:paddingBottom="10dp">
+            android:layout_weight="1"
+            android:orientation="horizontal">
 
-
-            <TextView
-                android:layout_width="match_parent"
+            <ImageView
+                android:id="@+id/icon2"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:text="프로젝트"
-                android:textSize="20dp"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
-
-            <Button
-                android:id="@+id/MainButton3"
-                android:layout_width="300dp"
-                android:layout_height="70dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="30dp"
-                android:background="@drawable/btn_darkblue"
-                android:gravity="center"
-                android:text="프로젝트 생성"
-                android:textColor="#FFFFFF"
-                android:textSize="18dp"
-                android:textStyle="bold"
-                app:backgroundTint="@null" />
+                android:src="@drawable/checklistcolor"
+                android:layout_gravity="center"/>
 
             <Button
                 android:id="@+id/MainButton"
-                android:layout_width="300dp"
+                android:layout_width="match_parent"
                 android:layout_height="70dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="30dp"
-                android:background="@drawable/btn_darkblue"
                 android:gravity="center"
-                android:text="내 프로젝트"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/black"
+                android:layout_gravity="center"
                 android:textSize="18dp"
-                android:textStyle="bold"
-                app:backgroundTint="@null" />
+                android:background="@drawable/btn_singup"
+                android:text="진행중인 프로젝트"
+                app:backgroundTint="@null"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:id="@+id/icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/checklistblack"
+                android:layout_gravity="center"/>
 
             <Button
                 android:id="@+id/MainButton2"
-                android:layout_width="300dp"
+                android:layout_width="match_parent"
                 android:layout_height="70dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="30dp"
-                android:background="@drawable/btn_darkblue"
                 android:gravity="center"
-                android:text="완료된 프로젝트"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/black"
+                android:layout_gravity="center"
                 android:textSize="18dp"
-                android:textStyle="bold"
-                app:backgroundTint="@null" />
-
-
+                android:background="@drawable/btn_singup"
+                app:backgroundTint="@null"
+                android:text=" 완료된 프로젝트 " />
 
 
         </LinearLayout>
