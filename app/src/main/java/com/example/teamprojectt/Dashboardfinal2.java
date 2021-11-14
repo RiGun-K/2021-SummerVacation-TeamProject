@@ -6,6 +6,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -39,6 +40,8 @@ public class Dashboardfinal2 extends AppCompatActivity {
     TextView title_tv, content_tv, date_tv;
     LinearLayout comment_layout;
     EditText comment_et;
+    String title_et;
+    String content_et;;
     Button reg_button;
 
     // 선택한 게시물의 번호
@@ -55,6 +58,9 @@ public class Dashboardfinal2 extends AppCompatActivity {
 // ListActivity 에서 넘긴 변수들을 받아줌
         board_seq = getIntent().getStringExtra("board_seq");
         userid = getIntent().getStringExtra("userid");
+
+        title_et = getIntent().getStringExtra("title_et");
+        content_et = getIntent().getStringExtra("content_et");
 
 // 컴포넌트 초기화
         title_tv = findViewById(R.id.title_tv);

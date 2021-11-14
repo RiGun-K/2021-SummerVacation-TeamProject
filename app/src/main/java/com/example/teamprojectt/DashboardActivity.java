@@ -89,7 +89,7 @@ public class DashboardActivity extends AppCompatActivity {
 
                 // userID 를 가지고 DashboardFinal 로 이동
                 Intent intent = new Intent(DashboardActivity.this, Dashboardfinal.class);
-                intent.putExtra("userid", userid);
+// 11/12 userid 없으므로 우선 주석              intent.putExtra("userid", userid);
                 startActivity(intent);
             }
         });

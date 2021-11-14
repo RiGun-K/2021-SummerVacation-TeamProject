@@ -6,12 +6,14 @@ import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -37,10 +39,11 @@ public class HomeActivity2 extends AppCompatActivity {
     private static String TAG = "phptest_HomeActivity2";
 
     private static final String TAG_JSON = "webnautes";
-    private static final String TAG_USERID = "userID";
-    private static final String TAG_USERPASSWORD = "userPassword";
-    private static final String TAG_USERNAME = "userName";
-    private static final String TAG_USERHAKBUN = "userHakbun";
+    private static final String TAG_PJID = "pjid";
+    private static final String TAG_PJNAME = "pjName";
+    private static final String TAG_PJCOUNT = "pjCount";
+    private static final String TAG_PJCONTENT = "pjContent";
+    private static final String TAG_PJEFFECT = "pjEffect";
 
 
     private TextView mTextViewResult;
@@ -62,10 +65,27 @@ public class HomeActivity2 extends AppCompatActivity {
         mlistView = (ListView)findViewById(R.id.listView_main_list);
         mArrayList = new ArrayList<>();
 
+
+        mlistView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                // 어떤 값을 선택했는지 토스트 전송
+                Toast.makeText(HomeActivity2.this, adapterView.getItemAtPosition(i)
+                        + "클릭", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
         GetData task = new GetData();
         task.execute("http://su1318ho.dothome.co.kr/getjson.php");
 
+
+
+
     }
+
+
 
     ///////////////////////////////////////////////////
 
@@ -174,18 +194,22 @@ public class HomeActivity2 extends AppCompatActivity {
 
                 JSONObject item = jsonArray.getJSONObject(i);
 
-                String userID = item.getString(TAG_USERID);
-                String userPassword = item.getString(TAG_USERPASSWORD);
-                String userName = item.getString(TAG_USERNAME);
 
-                String userHakbun = item.getString(TAG_USERHAKBUN);
+                int pjid = item.getInt(TAG_PJID);
+
+                String pjName = item.getString(TAG_PJNAME);
+                String pjContent = item.getString(TAG_PJCONTENT);
+                String pjEffect = item.getString(TAG_PJEFFECT);
+
+                int pjCount = item.getInt(TAG_PJCOUNT);
 
                 HashMap<String,String> hashMap = new HashMap<>();
 
-                hashMap.put(TAG_USERID, userID);
-                hashMap.put(TAG_USERPASSWORD, userPassword);
-                hashMap.put(TAG_USERNAME, userName);
-                hashMap.put(TAG_USERHAKBUN, userHakbun);
+                hashMap.put(TAG_PJID, pjid+"");
+                hashMap.put(TAG_PJNAME, pjName);
+                hashMap.put(TAG_PJCONTENT, pjContent);
+                hashMap.put(TAG_PJEFFECT, pjEffect);
+                hashMap.put(TAG_PJCOUNT, pjCount+"");
 
                 mArrayList.add(hashMap);
 
@@ -196,9 +220,9 @@ public class HomeActivity2 extends AppCompatActivity {
 
             ListAdapter adapter = new SimpleAdapter(
                     HomeActivity2.this, mArrayList, R.layout.mypage2_list,
-                    new String[]{TAG_USERID, TAG_USERPASSWORD, TAG_USERNAME, TAG_USERHAKBUN},
-                    new int[]{R.id.textView_list_userID, R.id.textView_list_userPassword,
-                              R.id.textView_list_userName, R.id.textView_list_userHakbun }
+                    new String[]{TAG_PJID,TAG_PJNAME, TAG_PJCONTENT, TAG_PJEFFECT, TAG_PJCOUNT},
+                    new int[]{R.id.textView_list_pjid,R.id.textView_list_pjName, R.id.textView_list_pjContent,
+                              R.id.textView_list_pjEffect, R.id.textView_list_pjCount }
             );
 
             mlistView.setAdapter(adapter);

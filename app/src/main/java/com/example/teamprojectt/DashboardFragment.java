@@ -34,10 +34,11 @@ public class DashboardFragment extends Fragment {
         MainButton3 = view.findViewById(R.id.MainButton3);
         // 해당 xml 안에 있는 Button 객체 생성
 
+        // 내 프로젝트
         MainButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), IngActivity.class);
+                Intent intent = new Intent(getActivity(), HomeActivity2.class);
                 startActivity(intent);
             }
         });

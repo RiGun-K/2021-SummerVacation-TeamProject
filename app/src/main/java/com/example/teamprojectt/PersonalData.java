@@ -2,40 +2,49 @@ package com.example.teamprojectt;
 
 public class PersonalData {
 
-    private String member_userID;
-    private String member_userPassword;
-    private String member_userName;
-    private String member_userHakbun;
+    private String member_pjid;
+    private String member_pjName;
+    private String member_pjContent;
+    private String member_pjEffect;
+    private String member_pjCount;
 
-    public void setMember_userID(String member_userID) {
-        this.member_userID = member_userID;
+    public String getMember_pjid() {
+        return member_pjid;
     }
 
-    public void setMember_userPassword(String member_userPassword) {
-        this.member_userPassword = member_userPassword;
+    public void setMember_pjid(String member_pjid) {
+        this.member_pjid = member_pjid;
     }
 
-    public void setMember_userName(String member_userName) {
-        this.member_userName = member_userName;
+    public String getMember_pjName() {
+        return member_pjName;
     }
 
-    public void setMember_userHakbun(String member_userHakbun) {
-        this.member_userHakbun = member_userHakbun;
+    public void setMember_pjName(String member_pjName) {
+        this.member_pjName = member_pjName;
     }
 
-    public String getMember_userID() {
-        return member_userID;
+    public String getMember_pjContent() {
+        return member_pjContent;
     }
 
-    public String getMember_userPassword() {
-        return member_userPassword;
+    public void setMember_pjContent(String member_pjContent) {
+        this.member_pjContent = member_pjContent;
     }
 
-    public String getMember_userName() {
-        return member_userName;
+    public String getMember_pjEffect() {
+        return member_pjEffect;
     }
 
-    public String getMember_userHakbun() {
-        return member_userHakbun;
+    public void setMember_pjEffect(String member_pjEffect) {
+        this.member_pjEffect = member_pjEffect;
+    }
+
+    public String getMember_pjCount() {
+        return member_pjCount;
+    }
+
+    public void setMember_pjCount(String member_pjCount) {
+        this.member_pjCount = member_pjCount;
     }
 }

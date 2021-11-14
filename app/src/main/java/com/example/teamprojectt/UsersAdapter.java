@@ -25,17 +25,19 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.CustomViewHo
     }
 
     class CustomViewHolder extends RecyclerView.ViewHolder {
-        protected TextView userID;
-        protected TextView userPassword;
-        protected TextView userName;
-        protected TextView userHakbun;
+        protected TextView pjid;
+        protected TextView pjName;
+        protected TextView pjContent;
+        protected TextView pjEffect;
+        protected TextView pjCount;
 
         public CustomViewHolder(View view) {
             super(view);
-            this.userID = (TextView) view.findViewById(R.id.textView_list_userID);
-            this.userPassword = (TextView) view.findViewById(R.id.textView_list_userPassword);
-            this.userName = (TextView) view.findViewById(R.id.textView_list_userName);
-            this.userHakbun = (TextView) view.findViewById(R.id.textView_list_userHakbun);
+            this.pjid = (TextView) view.findViewById(R.id.textView_list_pjid);
+            this.pjName = (TextView) view.findViewById(R.id.textView_list_pjName);
+            this.pjContent = (TextView) view.findViewById(R.id.textView_list_pjContent);
+            this.pjEffect = (TextView) view.findViewById(R.id.textView_list_pjEffect);
+            this.pjCount = (TextView) view.findViewById(R.id.textView_list_pjCount);
 
         }
     }
@@ -52,10 +54,11 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.CustomViewHo
     @Override
     public void onBindViewHolder(@NonNull CustomViewHolder viewholder, int position) {
 
-        viewholder.userID.setText(mList.get(position).getMember_userID());
-        viewholder.userPassword.setText(mList.get(position).getMember_userPassword());
-        viewholder.userName.setText(mList.get(position).getMember_userName());
-        viewholder.userHakbun.setText(mList.get(position).getMember_userHakbun());
+        viewholder.pjid.setText(mList.get(position).getMember_pjid());
+        viewholder.pjName.setText(mList.get(position).getMember_pjName());
+        viewholder.pjContent.setText(mList.get(position).getMember_pjContent());
+        viewholder.pjEffect.setText(mList.get(position).getMember_pjEffect());
+        viewholder.pjCount.setText(mList.get(position).getMember_pjCount());
     }
 
     @Override

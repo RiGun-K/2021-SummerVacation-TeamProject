@@ -28,7 +28,7 @@ import android.view.View;
 public class LoginActivity extends AppCompatActivity {
         private EditText et_id, et_pass;
         private Button btn_login, btn_register;
-        private CheckBox checkBox;
+//        private CheckBox checkBox;
         private TextView et_jin;
         private ImageView et_logo;
 
@@ -42,18 +42,18 @@ public class LoginActivity extends AppCompatActivity {
                 et_pass = findViewById(R.id.et_pass);
                 btn_login = findViewById(R.id.btn_login);
                 btn_register = findViewById(R.id.btn_register);
-                checkBox = findViewById(R.id.checkBox);
-
-                checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-                        @Override
-                        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                                if (isChecked) {
-                                        et_pass.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-                                } else {
-                                        et_pass.setTransformationMethod(PasswordTransformationMethod.getInstance());
-                                }
-                        }
-                });
+//                checkBox = findViewById(R.id.checkBox);
+//
+//                checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//                        @Override
+//                        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//                                if (isChecked) {
+//                                        et_pass.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+//                                } else {
+//                                        et_pass.setTransformationMethod(PasswordTransformationMethod.getInstance());
+//                                }
+//                        }
+//                });
 
                 // 회원가입 버튼 클릭시 수행
                 btn_register.setOnClickListener(new View.OnClickListener() {

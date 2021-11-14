@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -32,7 +33,7 @@ public class Dashboardfinal extends AppCompatActivity {
     Button reg_button;
 
     // 유저아이디 변수
-    String userid = "";
+//    String userid = "";
 
         @Override
         protected void onCreate (Bundle savedInstanceState){
@@ -40,7 +41,7 @@ public class Dashboardfinal extends AppCompatActivity {
             setContentView(R.layout.activity_final);
 
 // ListActivity 에서 넘긴 userid 를 변수로 받음
-            userid = getIntent().getStringExtra("userid");
+//            userid = getIntent().getStringExtra("userid");
 
 // 컴포넌트 초기화
             title_et = findViewById(R.id.title_et);
@@ -53,10 +54,13 @@ public class Dashboardfinal extends AppCompatActivity {
                 public void onClick(View view) {
 // 게시물 등록 함수
                     RegBoard regBoard = new RegBoard();
-                    regBoard.execute(userid, title_et.getText().toString(), content_et.getText().toString());
+//                    regBoard.execute( title_et.getText().toString(), content_et.getText().toString());
 
                     Intent intent = new Intent(Dashboardfinal.this, Dashboardfinal2.class);
+                    intent.putExtra("title_et", String.valueOf(title_et));
+                    intent.putExtra("content_et", String.valueOf(content_et));
                     startActivity(intent);
+
                 }
             });
 
@@ -94,9 +98,9 @@ public class Dashboardfinal extends AppCompatActivity {
             @Override
             protected String doInBackground(String... params) {
 
-                String userid = params[0];
-                String title = params[1];
-                String content = params[2];
+//                String userid = params[0];
+                String title = params[0];
+                String content = params[1];
 
                 String server_url = "http://su1318ho.dothome.co.kr/content.php";
 
@@ -113,7 +117,7 @@ public class Dashboardfinal extends AppCompatActivity {
                     conn.setDoInput(true);
                     conn.setDoOutput(true);
                     Uri.Builder builder = new Uri.Builder()
-                            .appendQueryParameter("userid", userid)
+//                            .appendQueryParameter("userid", userid)
                             .appendQueryParameter("title", title)
                             .appendQueryParameter("content", content);
                     String query = builder.build().getEncodedQuery();
