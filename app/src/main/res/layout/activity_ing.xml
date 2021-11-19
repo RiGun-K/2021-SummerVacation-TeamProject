@@ -9,7 +9,7 @@
     android:padding="10dp">
 
     // Recycler View 에는 DB에서 가져온 JSON 형식의 데이터를
-    // 파싱해서 항목별로 표시
+    // 파싱해서 항목별로 표시 !
 
     <LinearLayout
         android:layout_width="match_parent"
