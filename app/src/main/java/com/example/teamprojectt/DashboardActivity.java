@@ -45,6 +45,7 @@ public class DashboardActivity extends AppCompatActivity {
     //    String et_id = "";
     String userid = "";
 
+
     // 리스트뷰 에 사용할 제목 배열
     ArrayList<String> titlelist = new ArrayList<>();
     // 클릭시 게시물 번호를 담기위한 배열
@@ -56,7 +57,9 @@ public class DashboardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_join);
 
         // LoginActivity 에서 넘긴 유저의 아이디값 받기
-        userid = getIntent().getStringExtra("userid");
+        Intent myintent = getIntent();
+        String msg = myintent.getStringExtra("userID");
+
 
         // 컴포넌트 초기화
         listView = findViewById(R.id.listView);
@@ -75,6 +78,11 @@ public class DashboardActivity extends AppCompatActivity {
                 intent.putExtra("board_seq", seqList.get(i));
                 intent.putExtra("userid", userid);
                 startActivity(intent);
+
+
+
+
+
             }
         });
 
@@ -91,6 +99,10 @@ public class DashboardActivity extends AppCompatActivity {
                 Intent intent = new Intent(DashboardActivity.this, Dashboardfinal.class);
 // 11/12 userid 없으므로 우선 주석              intent.putExtra("userid", userid);
                 startActivity(intent);
+
+                // 11/19 일 LoginActivity 에서 userID 값을 전달하였으나 받아오질 못함 ( = null 님 환영합니다 )
+                Toast toast = Toast.makeText(getApplicationContext(), msg+" 님 환영합니다", Toast.LENGTH_LONG);
+                toast.show();
             }
         });
     }

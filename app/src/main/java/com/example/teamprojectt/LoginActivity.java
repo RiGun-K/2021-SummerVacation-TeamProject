@@ -42,6 +42,10 @@ public class LoginActivity extends AppCompatActivity {
                 et_pass = findViewById(R.id.et_pass);
                 btn_login = findViewById(R.id.btn_login);
                 btn_register = findViewById(R.id.btn_register);
+
+
+
+
 //                checkBox = findViewById(R.id.checkBox);
 //
 //                checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -93,10 +97,15 @@ public class LoginActivity extends AppCompatActivity {
 
 
                                                                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                                                Intent myintent = new Intent(LoginActivity.this, MainActivity.class);
 
                                                                 intent.putExtra("userID", userID);
                                                                 intent.putExtra("userPass", userPass);
                                                                 startActivity(intent);
+
+                                                                myintent.putExtra("userID",userID);
+                                                                startActivity(myintent);
+
                                                         } else { // 로그인에 실패한 경우
                                                                 Toast.makeText(getApplicationContext(), "로그인에 실패하였습니다,", Toast.LENGTH_SHORT).show();
                                                                 return;
