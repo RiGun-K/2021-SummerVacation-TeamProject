@@ -36,7 +36,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="제목입니다."
+                    android:text="튜터링 입니다."
                     />
             </LinearLayout>
             <LinearLayout
@@ -57,7 +57,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="제목입니다."
+                    android:text="2021.11.19"
                     />
             </LinearLayout>
             <TextView
@@ -72,7 +72,7 @@
                 android:background="#eeeeee"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="내용입니다."
+                android:text="'윌리스' 파이팅"
                 />
 
             <TextView
