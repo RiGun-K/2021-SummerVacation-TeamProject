@@ -79,7 +79,7 @@
                 android:layout_marginTop="30dp"
                 app:backgroundTint="@null"
                 android:background="@drawable/btn_darkblue"
-                android:text="홈액티비티이동"
+                android:text="내 정보"
                 android:textColor="#FFFFFF"
                 android:textSize="18dp"
                 android:textStyle="bold"
